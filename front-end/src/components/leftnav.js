@@ -62,6 +62,11 @@ const HR = Styled.hr `
      
 `
 
+const Name = Styled.h3 `
+    width: 170px;
+
+`
+
 
 
 
@@ -76,7 +81,7 @@ function LeftNav() {
             {/* Top div with name and picture */}
             <NamePic>
                 <Image alt = "stock-pic" src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
-                <h3>Insert Name</h3>
+                <Name>Insert Name</Name>
             </NamePic>
 
             {/* Middle div with icons and links */}

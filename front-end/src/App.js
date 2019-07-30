@@ -60,13 +60,9 @@ const useStyles = makeStyles(theme => ({
     padding: "5px 10px",
     margin: "5px",
     fontFamily: "open-sans",
-    background: "#e7ae0f",
+    backgroundColor: "#e7ae0f",
     color: "#2d4059"
-  },
-
-  activeTab: {
-    color: "white",
-    // borderBottom:  "5px solid linear-gradient(to right, #ee785e, #c967a4)",
+    
   },
 
   logoSIXR: {
@@ -87,9 +83,6 @@ function App() {
       <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className ={classes.toolbar}>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
             <img className={classes.logoSIXR} src = {Logo} alt ="SIXR logo" />
           </Typography>
@@ -97,7 +90,7 @@ function App() {
           <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Resources</Button></NavLink>
           <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">FAQ</Button></NavLink>
           <NavLink to="/login" style ={{color: "white", textDecoration: "none"}} ><Button className={classes.loginButton}  color="inherit">Login</Button></NavLink>
-          <NavLink to="/register" style ={{color: "white", textDecoration: "none"}} ><Button className={classes.registerButton} color="inherit">Register</Button></NavLink>
+          <NavLink to="/register" style ={{color: "#2d4059", textDecoration: "none"}} ><Button className={classes.registerButton} color="inherit">Register</Button></NavLink>
         </Toolbar>
       </AppBar>
       {/* <Route path = "/" exact component = {}/> */}
