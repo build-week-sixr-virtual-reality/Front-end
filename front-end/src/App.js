@@ -15,6 +15,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Dashboard from "./components/Dashboard.js";
 
+import Logo from "./assets/logo.png"
+
 
 
 
@@ -58,12 +60,16 @@ const useStyles = makeStyles(theme => ({
     padding: "5px 10px",
     margin: "5px",
     fontFamily: "open-sans",
-    background: "linear-gradient(to right, #ee785e, #c967a4)",
+    backgroundColor: "#e7ae0f",
+    color: "#2d4059"
+    
   },
 
-  activeTab: {
-    color: "white",
-    // borderBottom:  "5px solid linear-gradient(to right, #ee785e, #c967a4)",
+  logoSIXR: {
+    width: "97px",
+    height: "30px",
+    display: "flex",
+    justifyContent: "flex-start"
   }
 
 })); 
@@ -77,18 +83,14 @@ function App() {
       <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className ={classes.toolbar}>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            {/* <MenuIcon /> */}
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Logo here
+            <img className={classes.logoSIXR} src = {Logo} alt ="SIXR logo" />
           </Typography>
-          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Home</Button></NavLink>
+          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">About Us</Button></NavLink>
           <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Resources</Button></NavLink>
-          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Mentor Area</Button></NavLink>
-          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Contact</Button></NavLink>
+          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">FAQ</Button></NavLink>
           <NavLink to="/login" style ={{color: "white", textDecoration: "none"}} ><Button className={classes.loginButton}  color="inherit">Login</Button></NavLink>
-          <NavLink to="/register" style ={{color: "white", textDecoration: "none"}} ><Button className={classes.registerButton} color="inherit">Register</Button></NavLink>
+          <NavLink to="/register" style ={{color: "#2d4059", textDecoration: "none"}} ><Button className={classes.registerButton} color="inherit">Register</Button></NavLink>
         </Toolbar>
       </AppBar>
       {/* <Route path = "/" exact component = {}/> */}
