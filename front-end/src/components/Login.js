@@ -1,9 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 
 
 
 
-export default function memberLogIn() {
+export default function MemberLogIn() {
 
 
     // input state
@@ -24,12 +24,12 @@ export default function memberLogIn() {
            // make API call
             setUsers([...users,inputValue]);
             setID(prevId => prevId + 1);
-
+            setInputValue({email: '', password: ''});
+            console.log(users);
         };
         
-        setInputValue({email: '', password: ''});
-        console.log(users);
-    }
+       
+        
 
     return(
         <div>
@@ -66,5 +66,11 @@ export default function memberLogIn() {
 
 
                         />
-                    </label>    
-   
+          
+                  </label>    
+             </form>
+        </div>
+  
+    </div>
+    )
+}   
