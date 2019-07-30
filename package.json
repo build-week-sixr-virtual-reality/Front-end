@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@material-ui/core": "^4.3.0",
-    "eslint-config-react-app": "^4.0.1"
-  }
-}
