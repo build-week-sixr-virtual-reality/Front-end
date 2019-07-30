@@ -125,7 +125,7 @@ function ResetPassword () {
             </InnerContainerPicture>
             <InnerContainerText>
                 <FormDiv>
-                <H2>Reset your password</H2>
+                <H2>Reset Your Password</H2>
                 <Line />
                 <Form onSubmit ={handleSubmit}>
                     <Paragraph>Email Address</Paragraph>
