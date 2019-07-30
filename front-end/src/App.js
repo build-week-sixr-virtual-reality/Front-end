@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Dashboard from "./components/Dashboard.js";
 
 
 
@@ -93,7 +94,7 @@ function App() {
       {/* <Route path = "/" exact component = {}/> */}
       <Route path = "/register" component = {UserSignUp}/>
       <Route path = "/login"  component = {MemberLogIn}/>
-      
+      <Dashboard />
       
       
 
