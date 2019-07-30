@@ -82,7 +82,6 @@ const initialState = {
           ...state,
           error: action.payload.data.error,
           errorStatusCode: action.payload.status,
-          fetchingNotes: false
         };
       case REGISTER_USER_SUCCESS:
         return {
