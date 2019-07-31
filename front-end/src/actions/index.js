@@ -1,5 +1,5 @@
-// import axios from "axios";
-// import axiosAuth from "../axiosAuth";
+import axios from "axios";
+import axiosAuth from "../axiosAuth";
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -91,7 +91,7 @@ export const registerUser = creds => dispatch => {
 export const registerAdmin = creds => dispatch => {
   dispatch({ type: REGISTER_ADMIN_START });
   return axios
-    .post("https://ashenphoenix-sixr.herokuapp.com/user", creds)
+    .post("https://ashenphoenix-sixr.herokuapp.com/users", creds)
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({ type: REGISTER_ADMIN_SUCCESS, payload: res.data });
@@ -142,7 +142,7 @@ export const deleteUser = () => id => {
 export const getProjects = () => dispatch => {
   dispatch({ type: FETCH_PROJECT_START });
   axiosAuth()
-    .get("https://ashenphoenix-sixr.herokuapp.com/project/list")
+    .get("https://ashenphoenix-sixr.herokuapp.com/project/owned")
     .then(res => {
       dispatch({ type: FETCH_PROJECT_SUCCESS, payload: res.data });
     })
@@ -167,38 +167,17 @@ export const addProject = project => dispatch => {
     .catch(err => dispatch({ type: ADD_PROJECT_FAILURE, payload: err }));
 };
 
-export const editProject = project => {
-  dispatch({ type: EDIT_PROJECT_START });
-  return axiosAuth()
-    .put(
-      `https://ashenphoenix.sixr.herokuapp.com/project/${project.projectid}`,
-      project
-    )
-    .then(res => {
-      dispatch({ type: EDIT_PROJECT_SUCCESS });
-      axiosAuth()
-        .get("https://ashenphoenix.sixr.herokuapp.com/project/list")
-        .then(res => {
-          dispatch({ type: FETCH_PROJECT_SUCCESS, payload: res.data });
-        })
-        .catch(err => {
-          if (err.response && err.response.status === 403) {
-            dispatch({ type: USER_UNAUTHORIZED, payload: err.response });
-          } else {
-            dispatch({ type: FETCH_PROJECT_FAILURE, payload: err });
-          }
-        });
-    });
-};
-
-// export const deleteProject = id => dispatch => {
-//   dispatch({ type: DELETE_PROJECT_START });
+// export const editProject = project => {
+//   dispatch({ type: EDIT_PROJECT_START });
 //   return axiosAuth()
-//     .delete(`https://ashenphoenix.sixr.herokuapp.com/project/${id}`)
+//     .put(
+//       `https://ashenphoenix.sixr.herokuapp.com/project/${project}`,
+//       project
+//     )
 //     .then(res => {
-//       dispatch({ type: DELETE_PROJECT_SUCCESS, payload: res.data });
+//       dispatch({ type: EDIT_PROJECT_SUCCESS });
 //       axiosAuth()
-//         .get("https://safespaceapp.herokuapp.com/notes/mynotes")
+//         .get("https://ashenphoenix.sixr.herokuapp.com/project/list")
 //         .then(res => {
 //           dispatch({ type: FETCH_PROJECT_SUCCESS, payload: res.data });
 //         })
@@ -209,13 +188,34 @@ export const editProject = project => {
 //             dispatch({ type: FETCH_PROJECT_FAILURE, payload: err });
 //           }
 //         });
-//     })
-//     .catch(err => {
-//       if (err.status === 403) {
-//         dispatch({ type: USER_UNAUTHORIZED, payload: err });
-//       } else {
-//         dispatch({ type: DELETE_FAILURE, payload: err });
-//       }
 //     });
-
 // };
+
+export const deleteProject = id => dispatch => {
+  dispatch({ type: DELETE_PROJECT_START });
+  return axiosAuth()
+    .delete(`https://ashenphoenix.sixr.herokuapp.com/project/delete/${id}`)
+    .then(res => {
+      dispatch({ type: DELETE_PROJECT_SUCCESS, payload: res.data });
+      axiosAuth()
+        .get("https://ashenphoenix.sixr.herokuapp.com/project/owned")
+        .then(res => {
+          dispatch({ type: FETCH_PROJECT_SUCCESS, payload: res.data });
+        })
+        .catch(err => {
+          if (err.response && err.response.status === 403) {
+            dispatch({ type: USER_UNAUTHORIZED, payload: err.response });
+          } else {
+            dispatch({ type: FETCH_PROJECT_FAILURE, payload: err });
+          }
+        });
+    })
+    .catch(err => {
+      if (err.status === 403) {
+        dispatch({ type: USER_UNAUTHORIZED, payload: err });
+      } else {
+        dispatch({ type: DELETE_FAILURE, payload: err });
+      }
+    });
+
+};
