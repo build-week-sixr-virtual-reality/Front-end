@@ -3,6 +3,7 @@ import React from 'react';
 // import ResetPassword from "./components/ResetPassword.js";
 import UserSignUp from './components/UserSignUp.js';
 import MemberLogIn from './components/Login.js';
+import Dashboard from './components/Dashboard.js';
 
 import { NavLink, Route } from "react-router-dom";
 
@@ -16,6 +17,10 @@ import Button from '@material-ui/core/Button';
 import Dashboard from "./components/Dashboard.js";
 
 import Logo from "./assets/logo.png"
+
+
+
+
 
 
 
@@ -99,10 +104,11 @@ function App() {
       <Dashboard />
       
       
-
      
     </div>
+    <Dashboard />
 
+    
     </div>
   );
 }
