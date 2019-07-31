@@ -7,6 +7,7 @@ import Styled from "styled-components";
 
 const Background = Styled.div `
     background-color: #3c4c62;
+    font-family: open-sans
     
 `
 

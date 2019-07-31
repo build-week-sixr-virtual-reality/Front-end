@@ -30,12 +30,12 @@ const Paragraph = Styled.p `
    
 `
 const DivBlocks = Styled.div `
-    margin: 10px 30px 10px 30px;
+    margin: 10px 20px 10px 20px;
     text-align: left;
     padding: 20px;
     background-color: #1D2939;
     height: 120px;
-    width: 700px;
+    width: 80%;
     border-radius: 10px
 
 `
@@ -59,7 +59,7 @@ const BigDiv = Styled.div `
 
 export default function Resources(){
     return(
-        <div>
+        <div style = {{width: '100%'}}>
             
                 <TitleContainer>
                     <Title>Acess Resources</Title>
