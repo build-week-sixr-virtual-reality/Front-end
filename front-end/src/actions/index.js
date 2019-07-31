@@ -1,5 +1,5 @@
-import axios from "axios";
-import axiosAuth from "../axiosAuth";
+// import axios from "axios";
+// import axiosAuth from "../axiosAuth";
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -217,4 +217,5 @@ export const editProject = project => {
 //         dispatch({ type: DELETE_FAILURE, payload: err });
 //       }
 //     });
+
 // };

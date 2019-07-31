@@ -57,6 +57,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         fetchingProjects: true
       };
+
     case FETCH_PROJECT_SUCCESS:
       return {
         ...state,
@@ -72,6 +73,7 @@ const rootReducer = (state = initialState, action) => {
         error: action.payload.data.error,
         errorStatusCode: action.payload.status
       };
+
     //   case ADD_START:
     //     return {
     //       ...state,
