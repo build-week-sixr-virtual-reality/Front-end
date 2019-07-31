@@ -4,6 +4,8 @@ import { NavLink, Route } from "react-router-dom";
 import "../App.css";
 
 import CalendarDate from "./Calendar.js";
+
+import DashBoardProjects from "./DashBoardProjects.js"
 import ProjectFunding from './projectFunding.js';
 
 
@@ -131,10 +133,14 @@ function LeftNav() {
                     <img src = {LogoutImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
             </IconLinkDiv>
+
         </Container>
+        <DashBoardProjects />
+        <CalendarDate />
         <Route path = "/dashboard" component= {CalendarDate} />
         <Route path = "/project-funding" component = {ProjectFunding} />
         <Route path = "/mentoring" component = {Mentoring} />
+
         </MainContainer>
     )
 

@@ -16,13 +16,13 @@ const calendarStyle = makeStyles({
         // marginTop: '40px',
         backgroundColor: '#212936',
         width: '368px',
-        height: '256px'
+        height: '256px',
+        marginTop:"40px"
     },
 
     calendarDiv: {
-        top: "0px",
         display: "flex",
-        margin: "0",
+        flexDirection:"column",
         
     }
 
