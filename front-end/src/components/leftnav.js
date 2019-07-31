@@ -3,6 +3,7 @@ import Styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import "../App.css";
 
+import CalendarDate from "./Calendar.js";
 
 // Images
 import DashboardImage from "../assets/icons/dashboardTabEdit.png";
@@ -14,21 +15,21 @@ import LogoutImage from "../assets/icons/LogoutTabEdit.png";
 
 
 const MainContainer = Styled.div `
+    width: 100%;
     display: flex;
-    flex-direction: row;
 `
 
 
 
 const Container = Styled.div `
-    display: flex;
-    // justify-content: flex-start;
-    flex-direction: column;
-    width: 256px;
+    justify-content: left;
+    max-width: 256px;
     height: 100%;
     min-height: 93vh;
     background-color: #1d2838;
     margin: 0;
+   
+    
 
 `
 
@@ -128,6 +129,7 @@ function LeftNav() {
                 </NavLink>
             </IconLinkDiv>
         </Container>
+        <CalendarDate />
         </MainContainer>
     )
 
