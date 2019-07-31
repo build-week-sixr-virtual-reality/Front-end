@@ -52,12 +52,12 @@ const rootReducer = (state = initialState, action) => {
         loggingIn: false,
         token: action.payload
       };
-    case FETCH_PROJECTS_START:
+    case FETCH_PROJECT_START:
       return {
         ...state,
         fetchingProjects: true
       };
-    case FETCH_PROJECTS_SUCCESS:
+    case FETCH_PROJECT_SUCCESS:
       return {
         ...state,
         error: "",
