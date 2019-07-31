@@ -4,7 +4,6 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 
-
 const calendarStyle = makeStyles({
     dateTime:{
         backgroundColor: '#212936',
@@ -14,11 +13,19 @@ const calendarStyle = makeStyles({
         width: '368px'
     },
     box:{
-        marginTop: '40px',
+        // marginTop: '40px',
         backgroundColor: '#212936',
         width: '368px',
         height: '256px'
+    },
+
+    calendarDiv: {
+        display: "flex",
+        margin: "0",
+        top: "0"
     }
+
+   
 
 })
 
@@ -49,8 +56,8 @@ export default function CalendarDate(){
 
     }
     return(
-        <div>
-            <div>
+        <calendarDiv>
+            <calendarDiv>
                 {/* Calendar */}
             <DayPicker className = {classes.dateTime}
                 onChange={handleChange}
@@ -59,7 +66,7 @@ export default function CalendarDate(){
                 modifiersStyles={modifiersStyles}
             
              />
-            </div>
+            </calendarDiv>
            
 
             <div className = {classes.box}>
@@ -68,6 +75,6 @@ export default function CalendarDate(){
             </div>
 
             
-        </div>
+        </calendarDiv>
     )
 }
