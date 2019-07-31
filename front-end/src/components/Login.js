@@ -1,12 +1,12 @@
 import React, { useState} from 'react';
 import Styled from 'styled-components';
-import login from '../assets/login.jpg';
 
-const container = Styled.container `
+
+const Div = Styled.Div `
     display: flex;
     justify-content: space-evenly; `
 
-const h1 = Styled.h1 `
+const H1 = Styled.H1 `
     postition: absolute;
     width: 265px;
     height: 102px;
@@ -19,7 +19,7 @@ const h1 = Styled.h1 `
     line-height: 55px;
     color: #FEBF10; `
 
-const form = Styled.form `
+const Form = Styled.Form `
 display: flex;
 flex-direction: column;
 align-content: flex-start;
@@ -27,7 +27,7 @@ justify-content: space-evenly;
 background-color: #7D7D7D;
 `
 
-const label = Styled.EmailAddress `
+const Label = Styled.Label `
     position: absolute;
     width: 61px;
     height: 18px;
@@ -41,7 +41,7 @@ const label = Styled.EmailAddress `
     text-transform: uppercase;
     color: #CBCFD4; `
 
-const input = Styled.input `
+const Input = Styled.Input `
     position: absolute;
     width: 275px;
     height: 40px;
@@ -50,7 +50,7 @@ const input = Styled.input `
     background: #FFFFFF;
     border-radius: 3px; `
     
-const PassWord = Styled.PassWord `
+const FormDiv = Styled.FormDiv `
     position: absolute;
     width: 43px;
     height: 18px;
@@ -65,7 +65,7 @@ const PassWord = Styled.PassWord `
     color: #CBCFD4; 
     `    
 
-const secret = Styled.secret `
+const InnerContainerText = Styled.InnerContainerText `
     position: absolute;
     width: 275px;
     height: 40px;
@@ -74,7 +74,7 @@ const secret = Styled.secret `
     background: #FFFFFF;
     border-radius: 3px;
 `    
-const button = Styled.button `
+const Button = Styled.Button `
     position: absolute;
     width: 270px;
     height: 40px;
@@ -83,7 +83,7 @@ const button = Styled.button `
     background: linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
     border-radius: 20px;`
 
-const img = Styled.img `
+const Img = Styled.Img `
     position: absolute;
     width: 593px;
     height: 820;
@@ -125,22 +125,20 @@ export default function MemberLogIn() {
         */
        
         
-       
-        
 
     return(
         <div>
 
             <div>
-                <img src="{{login.jpg}}" alt="" />
+                <Img src="{{login.jpg}}" alt="" />
             </div>
 
-            <div className="container">
-                <h1>Access your dashboard</h1>
-                <form>
-                    <label className="EmailAddress">
+            <Div>
+                <H1>Access your dashboard</H1>
+                <Form>
+                    <Label className="EmailAddress">
                         EMAIL ADDRESS
-                        <input 
+                        <Input 
                             type ="text" 
                             placeholder ="hello@sixr.tv" 
                             name ="email"
@@ -149,21 +147,21 @@ export default function MemberLogIn() {
                             onChange ={handleChange}
 
                         />
-                    </label>
+                    </Label>
 
-                    <label className="PassWord"> 
+                    <FormDiv className="PassWord"> 
                         PASSWORD
-                        <input className="secret"
+                        <InnerContainerText
                             type = "password" 
                             placeholder ="Enter Password"
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
                             onChange ={handleChange} />
-                  </label>
-                  <button type="submit">CREATE ACCOUNT</button>    
-             </form>
-        </div>
+                  </FormDiv>
+                  <Button type="submit">CREATE ACCOUNT</Button>    
+             </Form>
+        </Div>
   
     </div>
     )
