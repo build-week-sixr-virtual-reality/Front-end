@@ -1,6 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
-import NavBarDashboard from "./NavBarDashboard.js";
+
 
 const TitleContainer = Styled.div `
     margin: 30px;
@@ -69,7 +69,7 @@ const MentorJob = Styled.p `
 function Mentoring () {
     return (
         <div>
-            <NavBarDashboard />
+      
         <div>
            <TitleContainer>
                 <Title>Find a Mentor</Title>
