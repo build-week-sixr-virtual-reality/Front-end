@@ -7,6 +7,7 @@ import CalendarDate from "./Calendar.js";
 
 import DashBoardProjects from "./DashBoardProjects.js"
 import ProjectFunding from './projectFunding.js';
+import Resources from './Resources'
 
 
 // Images
@@ -135,10 +136,11 @@ function LeftNav() {
             </IconLinkDiv>
 
         </Container>
-        <DashBoardProjects />
-        <CalendarDate />
+        {/* <DashBoardProjects /> */}
+        {/* <CalendarDate /> */}
         <Route path = "/dashboard" component= {CalendarDate} />
         <Route path = "/project-funding" component = {ProjectFunding} />
+        <Route path = "/resources" component = {Resources}/>
         <Route path = "/mentoring" component = {Mentoring} />
 
         </MainContainer>
