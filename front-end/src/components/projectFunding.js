@@ -39,12 +39,21 @@ const DivContainer = Styled.div `
 const InnerDiv = Styled.div `
     height: 48px;
     margin: 10px;
+    padding: 0 10px 0 10px;
     background-color: #405168;
     display: flex;
+    justify-content: space-between;
 `
 
 const ProjectP = Styled.p `
     margin: auto 10px auto 10px;
+    color: #c5cad1;
+`
+
+const AddProjectButton = Styled.button `
+    display: flex;
+    flex-direction: flex-start;
+    margin: 10px 10px 20px 10px;
 `
 
 
@@ -60,13 +69,11 @@ function ProjectFunding ({projects}) {
 
             </TitleContainer>
             <DivContainer>
-                <Link to ="/project-funding/step1"><button>Add Project</button></Link>
+                <Link to ="/project-funding/step1"><AddProjectButton>Add Project</AddProjectButton></Link>
                 {projects.map(project => {
                     return (
                         <InnerDiv>
                             <ProjectP>{project.title}</ProjectP>
-                            <p>-</p>
-                            <ProjectP>{project.description}</ProjectP>
                             <img src ={DeleteIcon} alt = "Delete project" style = {{width: "30px", height: "35px"}} />
                           
                         </InnerDiv>
