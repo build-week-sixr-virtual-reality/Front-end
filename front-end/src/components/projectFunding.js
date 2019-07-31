@@ -1,5 +1,9 @@
 import React from "react";
+import { Link, Route } from "react-router-dom";
 import Styled from "styled-components";
+
+
+import DeleteIcon from "../assets/icons/delete.png";
 
 
 const TitleContainer = Styled.div `
@@ -35,38 +39,41 @@ const DivContainer = Styled.div `
 const InnerDiv = Styled.div `
     height: 48px;
     margin: 10px;
-    background-color: #2d4059;
+    background-color: #405168;
+    display: flex;
+`
+
+const ProjectP = Styled.p `
+    margin: auto 10px auto 10px;
 `
 
 
-function ProjectFunding () {
-
-
+function ProjectFunding ({projects}) {
+    console.log(projects)
     return (
         <div>
+            
+            {/* <Route path = "/project-funding/step2" component = {ProjectStep2}></Route> */}
             <TitleContainer>
                 <Title>Project Funding</Title>
                 <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Paragraph>
 
             </TitleContainer>
             <DivContainer>
-                <InnerDiv>
-
-                </InnerDiv>
-                <InnerDiv>
-
-                </InnerDiv>
-                <InnerDiv>
-
-                </InnerDiv>
-                <InnerDiv>
-
-                </InnerDiv>
-                <InnerDiv>
-
-                </InnerDiv>
+                <Link to ="/project-funding/step1"><button>Add Project</button></Link>
+                {projects.map(project => {
+                    return (
+                        <InnerDiv>
+                            <ProjectP>{project.title}</ProjectP>
+                            <p>-</p>
+                            <ProjectP>{project.description}</ProjectP>
+                            <img src ={DeleteIcon} alt = "Delete project" style = {{width: "30px", height: "35px"}} />
+                          
+                        </InnerDiv>
+                    ) 
+                })}
+                
             </DivContainer>
-
         </div>
     )
 }
