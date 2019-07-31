@@ -69,7 +69,7 @@ function ProjectFunding ({projects}) {
 
             </TitleContainer>
             <DivContainer>
-                <Link to ="/project-funding/step1"><AddProjectButton>Add Project</AddProjectButton></Link>
+                <Link to ="/dashboard/funding/step1"><AddProjectButton>Add Project</AddProjectButton></Link>
                 {projects.map(project => {
                     return (
                         <InnerDiv>

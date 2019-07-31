@@ -55,12 +55,11 @@ function ProjectStep1 ({setStepOne, stepOne}) {
                  <p>WHY SHOULD WE FUND YOUR IDEA?</p>
                  <input type = "text" name = "why" placeholder = "   Why should we fund your idea?" value = {stepOne.why} onChange = {handleChange}/>
                  <div>
-               <Link to="/project-funding/step2" ><button >Next Step</button></Link> 
-               <Link to ="/project-funding" > <button >Discard Applicaton</button></Link>
+               <Link to="/dashboard/funding/step2" ><button >Next Step</button></Link> 
+               <Link to ="/dashboard/funding" > <button >Discard Applicaton</button></Link>
                 </div>
-             </form>
+             </form>  
          </div>
-         <Route exact path ="/project-funding/step2" component = {ProjectStep2} />
         </div>
     )
 
