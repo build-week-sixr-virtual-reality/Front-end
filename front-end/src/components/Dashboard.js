@@ -15,5 +15,5 @@ export default function Dashboard(){
              <LeftNav />
             <CalendarDate />
         </Background>
-      
-      }
+     
+   ) }

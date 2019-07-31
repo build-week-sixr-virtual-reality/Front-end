@@ -2,10 +2,10 @@ import React from "react";
 import Styled from "styled-components";
 
 
-const TitleContainer = Styled.div `
-    margin-right: 20px;
+// const TitleContainer = Styled.div `
+//     margin-right: 20px;
 
-`
+// `
 
 
 function ProjectFunding () {
