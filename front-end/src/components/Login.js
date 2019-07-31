@@ -50,7 +50,7 @@ const Input = Styled.input `
     background: #FFFFFF;
     border-radius: 3px; `
     
-const Formdiv = Styled.formdiv `
+const Formdiv = Styled.div `
     position: absolute;
     width: 43px;
     height: 18px;
