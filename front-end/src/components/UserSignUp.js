@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import login from '../assets/login.jpg'
 
-
+// styling
 const SignUp = makeStyles({
     container: {
         fontFamily: 'open-sans',
@@ -53,7 +53,6 @@ const SignUp = makeStyles({
     },
     inputText:{
         padding: '10px 150px 10px 0px',
-        
         borderRadius: '5px'
     }
 
@@ -61,7 +60,7 @@ const SignUp = makeStyles({
 })
 
 
-
+// userSignUp 
 export default function UserSignUp(){
 
     // input state

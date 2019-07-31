@@ -31,3 +31,39 @@
     transform: rotate(360deg);
   }
 }
+
+.activeDashboard {
+    content: url("../src/assets/icons/dashboardTab.png");
+    width: 266px;
+    z-index: 1;
+}
+
+.activeProjectFunding {
+  content: url("../src/assets/icons/FundingTab.png");
+  width: 266px;
+  z-index: 1;
+}
+
+.activeResources {
+  content: url("../src/assets/icons/resourcesTab.png");
+  width: 266px;
+  z-index: 1;
+}
+
+.activeMentoring {
+  content: url("../src/assets/icons/mentoringTab.png");
+  width: 266px;
+  z-index: 1;
+}
+
+.activeSettings {
+  content: url("../src/assets/icons/settingsTab.png");
+  width: 266px;
+  z-index: 1;
+}
+
+.activeLogout {
+  content: url("../src/assets/icons/logoutTab.png");
+  width: 266px;
+  z-index: 1;
+}

@@ -74,7 +74,7 @@ const InnerContainerText = Styled.InnerContainerText `
     background: #FFFFFF;
     border-radius: 3px;
 `    
-const Button = Styled.button `
+const Button = Styled.Button `
     position: absolute;
     width: 270px;
     height: 40px;
@@ -83,7 +83,7 @@ const Button = Styled.button `
     background: linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
     border-radius: 20px;`
 
-const Img = Styled.img `
+const Img = Styled.Img `
     position: absolute;
     width: 593px;
     height: 820;
@@ -110,7 +110,7 @@ export default function MemberLogIn() {
     const [id,setID] = useState(0)
 
     const handleChange = (e) =>{
-        setInputValue({...inputValue,[e.target.name] : e.target.value,id});
+        setInputValue({...inputValue,[e.target.name] : e.target.value, id});
     }
 
     /*
@@ -123,6 +123,11 @@ export default function MemberLogIn() {
             console.log(users);
         };
         */
+<<<<<<< HEAD
+=======
+       
+        
+>>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
        
         
 
@@ -130,6 +135,7 @@ export default function MemberLogIn() {
         <div>
 
             <div>
+<<<<<<< HEAD
                 <Img src="{{login.jpg}}" alt="" />
             </div>
 
@@ -139,6 +145,17 @@ export default function MemberLogIn() {
                     <Label className="EmailAddress">
                         EMAIL ADDRESS
                         <Input 
+=======
+                <img src="{{login.jpg}}" alt="" />
+            </div>
+
+            <div className="container">
+                <h1>Access your dashboard</h1>
+                <form>
+                    <label className="EmailAddress">
+                        EMAIL ADDRESS
+                        <input 
+>>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
                             type ="text" 
                             placeholder ="hello@sixr.tv" 
                             name ="email"
@@ -149,19 +166,32 @@ export default function MemberLogIn() {
                         />
                     </Label>
 
+<<<<<<< HEAD
                     <FormDiv className="PassWord"> 
                         PASSWORD
                         <InnerContainerText
+=======
+                    <label className="PassWord"> 
+                        PASSWORD
+                        <input className="secret"
+>>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
                             type = "password" 
                             placeholder ="Enter Password"
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
                             onChange ={handleChange} />
+<<<<<<< HEAD
                   </FormDiv>
                   <Button type="submit">CREATE ACCOUNT</Button>    
              </Form>
         </Div>
+=======
+                  </label>
+                  <button type="submit">CREATE ACCOUNT</button>    
+             </form>
+        </div>
+>>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
   
     </div>
     )

@@ -1,9 +1,20 @@
 import React from 'react';
+import LeftNav from "./leftnav.js";
 
-export default function Dashboard(){
+
+import Styled from "styled-components";
+
+
+const Background = Styled.div `
+    background-color: #3c4c62;
+    
+`
+
+export default  function Dashboard(){
     return(
-        <div>
-            
-        </div>
-    )
-}
+        <Background>
+            {/* Add your component here */}
+             <LeftNav />
+        </Background>
+     
+   ) }
