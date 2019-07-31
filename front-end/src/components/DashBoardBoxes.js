@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/core/styles'
 
 const miniBoxDiv = makeStyles({
     rootLittleBox:{
-        color: 'black',
+        color: '#2D4059',
         width: '156px',
         height: '156px',
         marginRight: '20px'
