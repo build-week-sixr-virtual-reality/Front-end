@@ -89,7 +89,7 @@ function App() {
       </AppBar>
       {/* <Route path = "/" exact component = {}/> */}
       <Route path = "/register" component = {UserSignUp}/>
-      <Route path = "/login"  component = {MemberLogIn}/>
+      {/* <Route path = "/login"  component = {MemberLogIn}/> */}
       
       <Dashboard />
       

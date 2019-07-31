@@ -4,11 +4,11 @@ import Styled from 'styled-components';
 UNCOMMENT BEFORE YOU COMMIT
 
 
-const Div = Styled.Div `
+const Div = Styled.div `
     display: flex;
     justify-content: space-evenly; `
 
-const H1 = Styled.H1 `
+const H1 = Styled.h1 `
     postition: absolute;
     width: 265px;
     height: 102px;
@@ -21,7 +21,7 @@ const H1 = Styled.H1 `
     line-height: 55px;
     color: #FEBF10; `
 
-const Form = Styled.Form `
+const Form = Styled.form `
 display: flex;
 flex-direction: column;
 align-content: flex-start;
@@ -29,7 +29,7 @@ justify-content: space-evenly;
 background-color: #7D7D7D;
 `
 
-const Label = Styled.Label `
+const Label = Styled.label `
     position: absolute;
     width: 61px;
     height: 18px;
@@ -43,7 +43,7 @@ const Label = Styled.Label `
     text-transform: uppercase;
     color: #CBCFD4; `
 
-const Input = Styled.Input `
+const Input = Styled.input `
     position: absolute;
     width: 275px;
     height: 40px;
@@ -52,7 +52,7 @@ const Input = Styled.Input `
     background: #FFFFFF;
     border-radius: 3px; `
     
-const FormDiv = Styled.FormDiv `
+const Formdiv = Styled.form `
     position: absolute;
     width: 43px;
     height: 18px;
@@ -67,7 +67,7 @@ const FormDiv = Styled.FormDiv `
     color: #CBCFD4; 
     `    
 
-const InnerContainerText = Styled.InnerContainerText `
+const InnerContainerText = Styled.div `
     position: absolute;
     width: 275px;
     height: 40px;
@@ -76,7 +76,7 @@ const InnerContainerText = Styled.InnerContainerText `
     background: #FFFFFF;
     border-radius: 3px;
 `    
-const Button = Styled.Button `
+const Button = Styled.button `
     position: absolute;
     width: 270px;
     height: 40px;
@@ -85,7 +85,7 @@ const Button = Styled.Button `
     background: linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
     border-radius: 20px;`
 
-const Img = Styled.Img `
+const Img = Styled.img `
     position: absolute;
     width: 593px;
     height: 820;
@@ -132,15 +132,15 @@ export default function MemberLogIn() {
         <div>
 
             <div>
-                <Img src="{{login.jpg}}" alt="" />
+                <img src="{{login.jpg}}" alt="" />
             </div>
 
-            <Div>
-                <H1>Access your dashboard</H1>
-                <Form>
-                    <Label className="EmailAddress">
+            <div>
+                <h1>Access your dashboard</h1>
+                <form>
+                    <label className="EmailAddress">
                         EMAIL ADDRESS
-                        <Input 
+                        <input 
                             type ="text" 
                             placeholder ="hello@sixr.tv" 
                             name ="email"
@@ -149,21 +149,21 @@ export default function MemberLogIn() {
                             onChange ={handleChange}
 
                         />
-                    </Label>
+                    </label>
 
-                    <FormDiv className="PassWord"> 
+                    <formdiv className="PassWord"> 
                         PASSWORD
-                        <InnerContainerText
+                        <innercontainertext
                             type = "password" 
                             placeholder ="Enter Password"
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
                             onChange ={handleChange} />
-                  </FormDiv>
-                  <Button type="submit">CREATE ACCOUNT</Button>    
-             </Form>
-        </Div>
+                  </formdiv>
+                  <button type="submit">CREATE ACCOUNT</button>    
+             </form>
+        </div>
   
     </div>
     )
