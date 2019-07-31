@@ -1,5 +1,6 @@
 import React from 'react';
 import Styled from "styled-components";
+import NavBarDashboard from "./NavBarDashboard.js";
 
 const MajorDiv = Styled.div `
     display:flex;
@@ -59,6 +60,8 @@ const BigDiv = Styled.div `
 
 export default function Resources(){
     return(
+        <div>
+            <NavBarDashboard />
         <div style = {{width: '100%'}}>
             
                 <TitleContainer>
@@ -103,5 +106,6 @@ export default function Resources(){
                 </MajorDiv>
         </div>
         
+        </div>
     )
 }

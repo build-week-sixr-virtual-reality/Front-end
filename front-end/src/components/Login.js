@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import Styled from 'styled-components';
+import NavBarSignIn from "./NavBarSignIn.js";
 
 
 
@@ -129,6 +130,8 @@ export default function MemberLogIn() {
 
     return(
         <div>
+            <NavBarSignIn />
+        <div>
 
             <div>
                 <img src="{{login.jpg}}" alt="" />
@@ -162,8 +165,9 @@ export default function MemberLogIn() {
                   </formdiv>
                   <button type="submit">CREATE ACCOUNT</button>    
              </form>
-        </div>
+            </div>
   
+        </div>
     </div>
     )
 }   

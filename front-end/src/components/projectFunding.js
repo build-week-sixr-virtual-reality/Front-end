@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
+import NavBarDashboard from "./NavBarDashboard.js";
 import Styled from "styled-components";
 
 
@@ -74,6 +75,8 @@ function ProjectFunding ({projects}) {
     console.log(projects)
     return (
         <div>
+            <NavBarDashboard />
+        <div>
             
             {/* <Route path = "/project-funding/step2" component = {ProjectStep2}></Route> */}
             <TitleContainer>
@@ -94,6 +97,7 @@ function ProjectFunding ({projects}) {
                 })}
                 
             </DivContainer>
+        </div>
         </div>
     )
 }
