@@ -12,22 +12,29 @@ import MentoringImage from "../assets/icons/mentoringtabEdit.png";
 import SettingsImage from "../assets/icons/settingsTabEdit.png";
 import LogoutImage from "../assets/icons/LogoutTabEdit.png";
 
+
+const MainContainer = Styled.div `
+    display: flex;
+    flex-direction: row;
+`
+
+
+
 const Container = Styled.div `
     display: flex;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     flex-direction: column;
     width: 256px;
-    min-height: 100vh;
-    heigth: 100%;
+    height: 100%;
+    min-height: 93vh;
     background-color: #1d2838;
+    margin: 0;
 
 `
 
 const NamePic = Styled.div `
     width: 234px;
     height: 200px;
-    margin: 0 auto 0 auto;
-    
     display: flex;
     flex-direction: column;
     padding: 10px 10px 5px 10px;
@@ -76,6 +83,7 @@ const Name = Styled.h3 `
 
 function LeftNav() {
     return (
+        <MainContainer>
         <Container>
 
             {/* Top div with name and picture */}
@@ -120,7 +128,7 @@ function LeftNav() {
                 </NavLink>
             </IconLinkDiv>
         </Container>
-
+        </MainContainer>
     )
 
 }

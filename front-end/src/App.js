@@ -3,7 +3,7 @@ import React from 'react';
 // import ResetPassword from "./components/ResetPassword.js";
 import UserSignUp from './components/UserSignUp.js';
 import MemberLogIn from './components/Login.js';
-import Dashboard from './components/Dashboard.js';
+import Dashboard from "./components/Dashboard.js";
 
 import { NavLink, Route } from "react-router-dom";
 
@@ -16,16 +16,6 @@ import Button from '@material-ui/core/Button';
 // import MenuIcon from '@material-ui/icons/Menu';
 
 import Logo from "./assets/logo.png"
-
-
-
-
-
-
-
-
-
-
 
 
 const useStyles = makeStyles(theme => ({
@@ -100,12 +90,12 @@ function App() {
       {/* <Route path = "/" exact component = {}/> */}
       <Route path = "/register" component = {UserSignUp}/>
       <Route path = "/login"  component = {MemberLogIn}/>
-      <Dashboard />
       
+      <Dashboard />
       
      
     </div>
-    <Dashboard />
+   
 
     
     </div>
