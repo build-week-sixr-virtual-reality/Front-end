@@ -3,7 +3,6 @@ import Styled from 'styled-components';
 
 
 
-
 const Div = Styled.div `
     display: flex;
     justify-content: space-evenly; `

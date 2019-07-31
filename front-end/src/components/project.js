@@ -28,16 +28,16 @@ function Project() {
     })
     return (
         <div>
-            <Route exact path ="/project-funding" render = {props => {
+            <Route exact path ="/dashboard/funding" render = {props => {
                return <ProjectFunding {...props} projects = {projects} key = {stepOne.id} />
             }} />
-            <Route exact path ="/project-funding/step1" render = {props => {
+            <Route exact path ="/dashboard/funding/step1" render = {props => {
               return  <ProjectStep1 {...props} setStepOne = {setStepOne} stepOne = {stepOne} />
             }} />
-            <Route exact path ="/project-funding/step2" render = {props => {
+            <Route exact path ="/dashboard/funding/step2" render = {props => {
               return  <ProjectStep2 {...props} setStepOne = {setStepOne} stepOne = {stepOne} />
             }} />
-            <Route exact path ="/project-funding/step3" render = {props => {
+            <Route exact path ="/dashboard/funding/step3" render = {props => {
               return  <ProjectStep3 {...props} setStepOne = {setStepOne} stepOne = {stepOne} setProjects = {setProjects} submitProject = {addProject}/>
             }} />
           
