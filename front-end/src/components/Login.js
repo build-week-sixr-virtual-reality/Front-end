@@ -123,11 +123,6 @@ export default function MemberLogIn() {
             console.log(users);
         };
         */
-<<<<<<< HEAD
-=======
-       
-        
->>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
        
         
 
@@ -135,7 +130,6 @@ export default function MemberLogIn() {
         <div>
 
             <div>
-<<<<<<< HEAD
                 <Img src="{{login.jpg}}" alt="" />
             </div>
 
@@ -145,17 +139,6 @@ export default function MemberLogIn() {
                     <Label className="EmailAddress">
                         EMAIL ADDRESS
                         <Input 
-=======
-                <img src="{{login.jpg}}" alt="" />
-            </div>
-
-            <div className="container">
-                <h1>Access your dashboard</h1>
-                <form>
-                    <label className="EmailAddress">
-                        EMAIL ADDRESS
-                        <input 
->>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
                             type ="text" 
                             placeholder ="hello@sixr.tv" 
                             name ="email"
@@ -166,32 +149,19 @@ export default function MemberLogIn() {
                         />
                     </Label>
 
-<<<<<<< HEAD
                     <FormDiv className="PassWord"> 
                         PASSWORD
                         <InnerContainerText
-=======
-                    <label className="PassWord"> 
-                        PASSWORD
-                        <input className="secret"
->>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
                             type = "password" 
                             placeholder ="Enter Password"
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
                             onChange ={handleChange} />
-<<<<<<< HEAD
                   </FormDiv>
                   <Button type="submit">CREATE ACCOUNT</Button>    
              </Form>
         </Div>
-=======
-                  </label>
-                  <button type="submit">CREATE ACCOUNT</button>    
-             </form>
-        </div>
->>>>>>> a231c969c83d9235bd33160ebb4174346a4f63d4
   
     </div>
     )
