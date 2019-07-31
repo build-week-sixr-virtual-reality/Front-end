@@ -52,26 +52,28 @@ const rootReducer = (state = initialState, action) => {
         loggingIn: false,
         token: action.payload
       };
-    case FETCH_PROJECTS_START:
+    case FETCH_PROJECT_START:
       return {
         ...state,
         fetchingProjects: true
       };
-    // case FETCH_PROJECTS_SUCCESS:
-    //   return {
-    //     ...state,
-    //     error: "",
-    //     errorStatusCode: null,
-    //     fetchingProjects: false,
-    //     projects: action.payload
-    //   };
-    // case FETCH_PROJECTS_FAILURE:
-    //   return {
-    //     ...state,
-    //     fetchingProjects: false,
-    //     error: action.payload.data.error,
-    //     errorStatusCode: action.payload.status
-    //   };
+
+    case FETCH_PROJECT_SUCCESS:
+      return {
+        ...state,
+        error: "",
+        errorStatusCode: null,
+        fetchingProjects: false,
+        projects: action.payload
+      };
+    case FETCH_PROJECTS_FAILURE:
+      return {
+        ...state,
+        fetchingProjects: false,
+        error: action.payload.data.error,
+        errorStatusCode: action.payload.status
+      };
+
     //   case ADD_START:
     //     return {
     //       ...state,
