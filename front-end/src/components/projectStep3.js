@@ -33,7 +33,7 @@ function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
     const handleSubmit = event => {
         event.preventDefault();
         submitProject(stepOne);
-        history.push("/project-funding")
+        history.push("/dashboard/funding")
     }
 
     
@@ -54,7 +54,7 @@ function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
                  <input type = "text" name = "handles" placeholder = "   Why should we fund your idea?" value = {stepOne.handles} onChange = {handleChange}/>
                  <div>
                  <button onClick ={handleSubmit}  >Submit Application</button>
-                 <Link to ="/project-funding" > <button >Discard Applicaton</button></Link>
+                 <Link to ="/dashboard/funding" > <button >Discard Applicaton</button></Link>
                 </div>
              </form>
          </div>
