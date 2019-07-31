@@ -144,7 +144,7 @@ function LeftNav() {
         {/* <DashBoardProjects />
         <CalendarDate /> */}
         <Route path = "/dashboard" component ={DashBoardProjects} />
-        <Route path = "/dashboard" component= {CalendarDate} />
+        {/* <Route path = "/dashboard" component= {CalendarDate} /> */}
         <Route path = "/project-funding" component = {Project} />
         <Route path = "/resources" component = {Resources}/>
         <Route path = "/mentoring" component = {Mentoring} />
