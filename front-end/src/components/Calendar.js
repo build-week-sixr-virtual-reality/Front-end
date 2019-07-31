@@ -20,9 +20,10 @@ const calendarStyle = makeStyles({
     },
 
     calendarDiv: {
+        top: "0px",
         display: "flex",
         margin: "0",
-        top: "0"
+        
     }
 
    
@@ -56,8 +57,8 @@ export default function CalendarDate(){
 
     }
     return(
-        <calendarDiv>
-            <calendarDiv>
+        <div className = {classes.calendarDiv} >
+            <div>
                 {/* Calendar */}
             <DayPicker className = {classes.dateTime}
                 onChange={handleChange}
@@ -66,7 +67,7 @@ export default function CalendarDate(){
                 modifiersStyles={modifiersStyles}
             
              />
-            </calendarDiv>
+            </div>
            
 
             <div className = {classes.box}>
@@ -75,6 +76,6 @@ export default function CalendarDate(){
             </div>
 
             
-        </calendarDiv>
+        </div>
     )
 }
