@@ -1,9 +1,11 @@
 import React from "react";
 import Styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import "../App.css";
 
 import CalendarDate from "./Calendar.js";
+import ProjectFunding from './projectFunding.js';
+
 
 // Images
 import DashboardImage from "../assets/icons/dashboardTabEdit.png";
@@ -12,6 +14,7 @@ import ResourcesImage from "../assets/icons/ResourcesTabEdit.png";
 import MentoringImage from "../assets/icons/mentoringtabEdit.png";
 import SettingsImage from "../assets/icons/settingsTabEdit.png";
 import LogoutImage from "../assets/icons/LogoutTabEdit.png";
+import Mentoring from "./Mentoring";
 
 
 const MainContainer = Styled.div `
@@ -25,7 +28,7 @@ const Container = Styled.div `
     justify-content: left;
     max-width: 256px;
     height: 100%;
-    min-height: 93vh;
+    min-height: 860px;
     background-color: #1d2838;
     margin: 0;
    
@@ -104,13 +107,13 @@ function LeftNav() {
                     <img src = {ProjectFundingImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
-                <NavLink to ="/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources" exact>
-                    <img src = {ResourcesImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
-                </NavLink>
-                
 
                 <NavLink to ="/mentoring" style = {{textDecoration: "none"}} activeClassName ="activeMentoring" exact>
                     <img src = {MentoringImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
+                </NavLink>
+
+                <NavLink to ="/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources" exact>
+                    <img src = {ResourcesImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
                 
                 <NavLink to ="/settings" style = {{textDecoration: "none"}} activeClassName ="activeSettings" exact>
@@ -129,7 +132,9 @@ function LeftNav() {
                 </NavLink>
             </IconLinkDiv>
         </Container>
-        <CalendarDate />
+        <Route path = "/dashboard" component= {CalendarDate} />
+        <Route path = "/project-funding" component = {ProjectFunding} />
+        <Route path = "/mentoring" component = {Mentoring} />
         </MainContainer>
     )
 
