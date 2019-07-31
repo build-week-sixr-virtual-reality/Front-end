@@ -112,7 +112,7 @@ export default function MemberLogIn() {
         setInputValue({...inputValue,[e.target.name] : e.target.value, id});
     }
 
-    /*
+    
     const handleSubmit = (e) =>{
     
            // make API call
@@ -121,7 +121,7 @@ export default function MemberLogIn() {
             setInputValue({email: '', password: ''});
             console.log(users);
         };
-        */
+        
        
         
 
