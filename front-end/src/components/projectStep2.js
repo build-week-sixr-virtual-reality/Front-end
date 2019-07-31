@@ -51,8 +51,8 @@ function ProjectStep1 ({setStepOne, stepOne}) {
                  <p>FUNDING AMOUNT REQUESTED</p>
                  <input type = "text" name = "amount" placeholder = "   $" value = {stepOne.amount} onChange = {handleChange}/>
                  <div>
-               <Link to="/project-funding/step3" ><button >Next Step</button></Link> 
-               <Link to ="/project-funding" > <button >Discard Applicaton</button></Link>
+               <Link to="/dashboard/funding/step3" ><button >Next Step</button></Link> 
+               <Link to ="/dashboard/funding" > <button >Discard Applicaton</button></Link>
                 </div>
              </form>
          </div>

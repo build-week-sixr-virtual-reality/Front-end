@@ -1,8 +1,6 @@
 import React, { useState} from 'react';
 import Styled from 'styled-components';
 
-UNCOMMENT BEFORE YOU COMMIT
-
 
 const Div = Styled.div `
     display: flex;
