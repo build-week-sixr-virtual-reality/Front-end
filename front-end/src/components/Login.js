@@ -50,7 +50,7 @@ const Input = Styled.input `
     background: #FFFFFF;
     border-radius: 3px; `
     
-const Formdiv = Styled.div `
+const Formdiv = Styled.form `
     position: absolute;
     width: 43px;
     height: 18px;
@@ -65,7 +65,7 @@ const Formdiv = Styled.div `
     color: #CBCFD4; 
     `    
 
-const InnerContainerText = Styled.innercontainertext `
+const InnerContainerText = Styled.div `
     position: absolute;
     width: 275px;
     height: 40px;
