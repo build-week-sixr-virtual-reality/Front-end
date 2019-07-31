@@ -19,7 +19,7 @@ const H1 = Styled.h1 `
     line-height: 55px;
     color: #FEBF10; `
 
-const Form = Styled.form `
+const Form = Styled.Form `
 display: flex;
 flex-direction: column;
 align-content: flex-start;
