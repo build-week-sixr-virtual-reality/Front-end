@@ -141,7 +141,7 @@ function LeftNav() {
         </Container>
 
         <Route exact path = "/dashboard" component ={DashBoardProjects} />
-//         <Route exact path = "/dashboard" component= {CalendarDate} />
+       <Route exact path = "/dashboard" component= {CalendarDate} />
         <Route path = "/dashboard/funding"  component = {Project} />
         <Route exact path = "/dashboard/resources" component = {Resources}/>
         <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
