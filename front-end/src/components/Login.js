@@ -141,9 +141,8 @@ export default function UserLogIn() {
                             value = {inputValue.password}
                             id ={id}
                             onChange ={handleChange} />                            
-                  </label>
-                     
-                     <A href="">Forgot Password?</A>
+                  </label>              
+                    <A href="">Forgot Password?</A>
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
                         Create an account >
                     </button>   
