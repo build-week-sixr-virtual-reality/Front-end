@@ -7,6 +7,10 @@ import CalendarDate from "./Calendar.js";
 
 import DashBoardProjects from "./DashBoardProjects.js"
 import ProjectFunding from './projectFunding.js';
+import Resources from './Resources'
+import Project from './project.js';
+
+
 
 
 // Images
@@ -105,20 +109,20 @@ function LeftNav() {
                 </NavLink>
               
 
-                <NavLink to ="/project-funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding" exact>
+                <NavLink to ="/dashboard/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding" exact>
                     <img src = {ProjectFundingImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
 
-                <NavLink to ="/mentoring" style = {{textDecoration: "none"}} activeClassName ="activeMentoring" exact>
+                <NavLink to ="/dashboard/mentoring" style = {{textDecoration: "none"}} activeClassName ="activeMentoring" exact>
                     <img src = {MentoringImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
 
-                <NavLink to ="/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources" exact>
+                <NavLink  to ="/dashboard/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources" exact>
                     <img src = {ResourcesImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
                 
-                <NavLink to ="/settings" style = {{textDecoration: "none"}} activeClassName ="activeSettings" exact>
+                <NavLink to ="/dashboard/settings" style = {{textDecoration: "none"}} activeClassName ="activeSettings" exact>
                     <img src = {SettingsImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
 
@@ -135,11 +139,16 @@ function LeftNav() {
             </IconLinkDiv>
 
         </Container>
-        <DashBoardProjects />
-        <CalendarDate />
-        <Route path = "/dashboard" component= {CalendarDate} />
-        <Route path = "/project-funding" component = {ProjectFunding} />
-        <Route path = "/mentoring" component = {Mentoring} />
+
+        <Route exact path = "/dashboard" component ={DashBoardProjects} />
+
+
+{/* //         <Route exact path = "/dashboard" component= {CalendarDate} /> */}
+
+        <Route path = "/dashboard/funding"  component = {Project} />
+        <Route exact path = "/dashboard/resources" component = {Resources}/>
+        <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
+
 
         </MainContainer>
     )
