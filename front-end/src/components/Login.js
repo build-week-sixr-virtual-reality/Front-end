@@ -227,22 +227,23 @@ export default function UserLogIn() {
                             id ={id}
                             onChange ={handleChange} />
 
-                  </formdiv>
+                  {/* </formdiv>
                   <button type="submit">CREATE ACCOUNT</button>    
              </form>
             </div>
   
         </div>
-    </div>
+    </div> */}
 
-//                   </label>
-//                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-//                         Create an account
-//                     </button>   
+                  </label>
+                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
+                        Create an account
+                    </button>   
                 
-//               </form>
+              </form>
   
-//         </div>
-
+        </div>
+     </div>
+    </div>
     )
 }   
