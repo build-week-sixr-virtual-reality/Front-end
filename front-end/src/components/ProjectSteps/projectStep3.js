@@ -2,11 +2,8 @@ import React from "react";
 import Styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
-
-
 const TitleContainer = Styled.div `
-    margin: 0 30px 30px 30px;
+    margin: 30px 30px 0 30px;
     text-align: left;
     padding: 20px;
     background-color: #2d4059;
@@ -25,7 +22,6 @@ const Paragraph = Styled.p `
     color: #8c96a4;
    
 `
-
 const FormDiv = Styled.div `
     margin: 0 30px 30px 30px;
     height: 100%;
@@ -53,12 +49,6 @@ const Info = Styled.p `
 
 `
 
-const TitleInput = Styled.input `
-    border: none;
-    height: 30px; 
-    width: 70%;
-`
-
 const OtherInput = Styled.textarea `
     border: none;
     width: 70%;
@@ -79,7 +69,7 @@ const NextButton = Styled.button `
     justify-content: center;
     margin: 10px 10px 20px 10px;
     padding: 10px 10px;
-    width: 90px;
+    width: 140px;
     border-radius: 25px;
     color: #405168;
     background: linear-gradient(to right, #35c6f2, #a3d89b);
@@ -104,9 +94,12 @@ const DiscardButton = Styled.button  `
 
 `
 
+const DashSpan = Styled.span `
+    color: #2b3648;
+`
 
-function ProjectStep1 ({setStepOne, stepOne}) {
-    console.log(stepOne);
+function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
+    console.log(stepOne)
 
     const handleChange = event => {
         setStepOne({...stepOne, [event.target.name]: event.target.value})
@@ -114,10 +107,12 @@ function ProjectStep1 ({setStepOne, stepOne}) {
 
     const handleSubmit = event => {
         event.preventDefault();
+        submitProject(stepOne);
+        history.push("/dashboard/funding/submitted")
     }
 
-
-
+    
+    
     return (
         <div>
          <TitleContainer>
@@ -126,23 +121,21 @@ function ProjectStep1 ({setStepOne, stepOne}) {
 
          </TitleContainer>
          <FormDiv>
-             <Steps><CurrentStep>Step 1</CurrentStep> - Step 2 - Step 3</Steps>
-             <form onSubmit = {handleSubmit}>
-                 <Info>PROJECT TITLE</Info>
-                 <TitleInput type = "text" name = "title" placeholder = "   Project Title" value = {stepOne.title} onChange = {handleChange}/>
-                 <Info>PROJECT DESCRIPTION</Info>
-                 <OtherInput type = "text" name = "description" maxlength="1000" placeholder = "   Project Description" value = {stepOne.description} onChange = {handleChange}/>
-                 <Info>WHY SHOULD WE FUND YOUR IDEA?</Info>
-                 <OtherInput type = "text" name = "why" maxlength="1000" placeholder = "   Why should we fund your idea?" value = {stepOne.why} onChange = {handleChange}/>
+             <Steps><CurrentStep>Step 1 </CurrentStep><DashSpan>-</DashSpan><CurrentStep>Step 2</CurrentStep><DashSpan> - </DashSpan><CurrentStep>Step 3</CurrentStep>  </Steps>
+             <form>
+                 <Info>GIVE USE A QUICK SUMMARY OF YOUR PROJECT PLAN</Info>
+                 <OtherInput type = "text" name = "summary" placeholder = "   Project Description" value = {stepOne.summary} onChange = {handleChange}/>
+                 <Info>ARE THERE HURDLES THAT PREVENT YOU FROM WORKING ON THIS PROJECT?</Info>
+                 <OtherInput type = "text" name = "handles" placeholder = "   Why should we fund your idea?" value = {stepOne.handles} onChange = {handleChange}/>
                  <ButtonsDiv>
-               <Link to="/dashboard/funding/step2" style = {{textDecoration: "none"}} ><NextButton >NEXT STEP</NextButton></Link> 
-               <Link to ="/dashboard/funding"  style = {{textDecoration: "none"}}  > <DiscardButton >DISCARD APPLICATION</DiscardButton></Link>
+                 <NextButton onClick ={handleSubmit}  >SUBMIT APPLICATION</NextButton>
+                 <Link to ="/dashboard/funding" style = {{textDecoration: "none"}}> <DiscardButton >DISCARD APPLICATION</DiscardButton></Link>
                 </ButtonsDiv>
-             </form>  
+             </form>
          </FormDiv>
         </div>
     )
 
 }
 
-export default ProjectStep1;
+export default ProjectStep3;

@@ -1,11 +1,5 @@
 import React from 'react';
-
-// import ResetPassword from "./components/ResetPassword.js";
-import UserSignUp from '../components/UserSignUp.js';
-import MemberLogIn from '../components/Login.js';
-import Dashboard from "../components/Dashboard.js";
-
-import { NavLink, Route } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -87,10 +81,7 @@ function NavBarSignIn() {
           <NavLink to="/" style ={{color: "#2d4059", textDecoration: "none"}} ><Button className={classes.registerButton} color="inherit">Register</Button></NavLink>
         </Toolbar>
       </AppBar>
-      {/* <Route path = "/" exact component = {}/> */}
-      {/* <Route path = "/" component = {UserSignUp}/>
-      <Route path = "/login"  component = {MemberLogIn}/>
-      <Route path = "/dashboard" component = {Dashboard} /> */}
+    
       
      
     </div>
