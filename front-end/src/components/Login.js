@@ -150,29 +150,9 @@ export default function UserLogIn() {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
-<<<<<<< HEAD
                             onChange ={handleChange} />                            
                   </label>              
                     <A href="">Forgot Password?</A>
-=======
-
-                            onChange ={handleChange} /> 
-                         {/* onChange ={handleChange} /> */}
-
-
-
-                  {/* </formdiv>
-                  <button type="submit">CREATE ACCOUNT</button>    
-             </form>
-            </div>
-  
-        </div>
-    </div> */}
-
-                  </label>
-                     
-                     <A href="">Forgot Password?</A>
->>>>>>> 89fdf84890aec0c8ffbacf47a4707d07ba87e9ba
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
                         Create an account >
                     </button>   
