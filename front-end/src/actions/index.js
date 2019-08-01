@@ -17,9 +17,9 @@ export const REGISTER_ADMIN_FAILURE = "REGISTER_ADMIN_FAILURE";
 // export const EDIT_USER_SUCCESS = "EDIT_USER_SUCCESS";
 // export const EDIT_USER_FAILURE = "EDIT_USER_FAILURE";
 
-// export const EDIT_ROLE_START = "EDIT_ROLE_START";
-// export const EDIT_ROLE_SUCCESS = "EDIT_ROLE_SUCCESS";
-// export const EDIT_ROLE_FAILURE = "EDIT_ROLE_FAILURE";
+export const EDIT_ROLE_START = "EDIT_ROLE_START";
+export const EDIT_ROLE_SUCCESS = "EDIT_ROLE_SUCCESS";
+export const EDIT_ROLE_FAILURE = "EDIT_ROLE_FAILURE";
 
 export const DELETE_USER_START = "DELETE_USER_START";
 export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS";
@@ -28,6 +28,10 @@ export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE";
 export const FETCH_PROJECT_START = "FETCH_PROJECT_START";
 export const FETCH_PROJECT_SUCCESS = "FETCH_PROJECT_SUCCESS";
 export const FETCH_PROJECT_FAILURE = "FETCH_PROJECT_FAILURE";
+
+export const FETCH_MENTORS_START = "FETCH_MENTORS_START";
+export const FETCH_MENTORS_SUCCESS = "FETCH_MENTORS_SUCCESS";
+export const FETCH_MENTORS_FAILURE = "FETCH_MENTORS_FAILURE";
 
 export const FETCH_USERS_START = "FETCH_USERS_START";
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
@@ -40,8 +44,6 @@ export const ADD_PROJECT_FAILURE = "ADD_PROJECT_FAILURE";
 export const DELETE_PROJECT_START = "DELETE_PROJECT_START";
 export const DELETE_PROJECT_SUCCESS = "DELETE_PROJECT_SUCCESS";
 export const DELETE_PROJECT_FAILURE = "DELETE_PROJECT_FAILURE";
-
-
 
 // export const EDIT_PROJECT_START = "EDIT_PROJECT_START";
 // export const EDIT_PROJECT_SUCCESS = "EDIT_PROJECT_SUCCESS";
@@ -94,31 +96,59 @@ export const registerUser = creds => dispatch => {
     });
 };
 
+export const enableMentor = type => dispatch => {
+  dispatch({ type: ENABLE_MENTOR_START });
+  return axios
+    .put(`https://ashenphoenix-sixr.herokuapp.com/users/type/${type}`)
+    .then(res => {
+      dispatch({ type: ENABLE_MENTOR_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+    dispatch({ type: ENABLE_MENTOR_FAILURE, payload: `Unable to change mentor status`, err})
+  })
+}
+
 export const registerAdmin = creds => dispatch => {
   dispatch({ type: REGISTER_ADMIN_START });
   return axios
     .post("https://ashenphoenix-sixr.herokuapp.com/users", creds)
     .then(res => {
-      localStorage.setItem("token", res.data.token);
       dispatch({ type: REGISTER_ADMIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      dispatch({ type: REGISTER_ADMIN_FAILURE, payload: err });
+      dispatch({ type: REGISTER_ADMIN_FAILURE, payload: `Unable to register as admin`, err });
     });
 };
 
 // ADMIN ACTIONS
 
-// export const changeUserRole = creds => {
-//   dispatch({ type: EDIT_ROLE_START });
-//   return axiosAuth()
-//   .put("https://ashenphoenix-sixr.herokuapp.com/user")
-// }
+export const changeUserRole = (auth, id, creds) => dispatch => {
+  dispatch({ type: EDIT_ROLE_START });
+  return axiosAuth()
+    .put(
+      `https://ashenphoenix-sixr.herokuapp.com/user/grant/${auth}/${id}`,
+      creds
+    )
+    .then(res => {
+      dispatch({ type: EDIT_ROLE_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      if (err.status === 403) {
+        dispatch({
+          type: USER_UNAUTHORIZED,
+          payload: `You're unauthorized`,
+          err
+        });
+      } else {
+        dispatch({ type: EDIT_ROLE_FAILURE, payload: `Internal Error`, err });
+      }
+    });
+};
 
-export const deleteUser = id => dispatch => {
+export const deleteUser = (id, creds) => dispatch => {
   dispatch({ type: DELETE_USER_START });
   return axiosAuth()
-    .delete(`https://ashenphoenix-sixr.herokuapp.com/users/${id}`)
+    .delete(`https://ashenphoenix-sixr.herokuapp.com/users/${id}`, creds)
     .then(res => {
       dispatch({ type: DELETE_USER_SUCCESS, payload: res.data });
       axiosAuth()
@@ -223,5 +253,4 @@ export const deleteProject = id => dispatch => {
         dispatch({ type: DELETE_PROJECT_FAILURE, payload: err });
       }
     });
-
 };
