@@ -14,7 +14,7 @@ export default function ResourcesHub(){
                 <Route exact path = "/dashboard/resources/a" component = {FirstArticle}  />
                 <Route exact path = "/dashboard/resources/b" component = {SecondArticle} />
                 <Route exact path = "/dashboard/resources/c" component = {ThirdArticle} />
-                <Route exact path = "/dashboard/resources/d" component = {FourthArticle} />
+                <Route exact path = "/dashboard/resources/d" component = {FourthArticle} />  
             </Switch>
         </div>
     )
