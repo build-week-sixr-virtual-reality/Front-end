@@ -19,7 +19,7 @@ const Title = Styled.h2 `
 
 const Paragraph = Styled.p `
     color: #8c96a4;
-   
+    
 `
 
 const MentorDiv = Styled.div `
