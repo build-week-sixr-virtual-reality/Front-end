@@ -24,18 +24,23 @@ const miniBoxDiv = makeStyles({
         borderRadius: '10px'
     }
 })
-export default function DashBoardBoxes (){
+export default function DashBoardBoxes ({dashBoardProjects}){
     const classes = miniBoxDiv()
     return(
         <div>
            
         <div>
             <div className ={classes.container}>
-                <div className = {classes.rootLittleBox} >
+                {dashBoardProjects.map(project => {
+                 return( 
+                 <div className = {classes.rootLittleBox} >
+                    <h2>{project.title}</h2>
+                </div> 
+                    ) 
+                })}
+                
 
-                </div>
-
-                <div className = {classes.rootLittleBox}>
+                {/* <div className = {classes.rootLittleBox}>
                     
                 </div>
 
@@ -45,7 +50,7 @@ export default function DashBoardBoxes (){
 
                 <div className = {classes.rootLittleBox}>
                     
-                </div>
+                </div> */}
             </div>
             <div>
                 <div className ={classes.rootBigBox}>
