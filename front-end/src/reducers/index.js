@@ -136,21 +136,21 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         fetchingUsers: true
       };
-    // case FETCH_USERS_SUCCESS:
-    //   return {
-    //     ...state,
-    //     error: "",
-    //     errorStatusCode: null,
-    //     fetchingUsers: false,
-    //     users: action.payload
-    //   };
-    // case FETCH_USERS_FAILURE:
-    //   return {
-    //     ...state,
-    //     fetchingUsers: false,
-    //     error: action.payload.data.error,
-    //     errorStatusCode: action.payload.status
-    //   };
+    case FETCH_USERS_SUCCESS:
+      return {
+        ...state,
+        error: "",
+        errorStatusCode: null,
+        fetchingUsers: false,
+        users: action.payload
+      };
+    case FETCH_USERS_FAILURE:
+      return {
+        ...state,
+        fetchingUsers: false,
+        error: action.payload.data.error,
+        errorStatusCode: action.payload.status
+      };
 
     // --DELETING USERS
 

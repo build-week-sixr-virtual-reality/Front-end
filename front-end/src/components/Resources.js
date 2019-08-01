@@ -1,6 +1,7 @@
 import React from 'react';
 import Styled from "styled-components";
 
+
 const MajorDiv = Styled.div `
     display:flex;
     flex-direction: row;
@@ -59,6 +60,8 @@ const BigDiv = Styled.div `
 
 export default function Resources(){
     return(
+        <div>
+            
         <div style = {{width: '100%'}}>
             
                 <TitleContainer>
@@ -103,5 +106,6 @@ export default function Resources(){
                 </MajorDiv>
         </div>
         
+        </div>
     )
 }

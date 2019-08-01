@@ -1,6 +1,106 @@
+
+// import React, { useState} from 'react';
+// import Styled from 'styled-components';
+
+
+
+
+// const Div = Styled.div `
+//     display: flex;
+//     justify-content: space-evenly; `
+
+// const H1 = Styled.h1 `
+//     postition: absolute;
+//     width: 265px;
+//     height: 102px;
+//     left: 930px;
+//     top: 130px;
+//     font-family: Open Sans;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 44px;
+//     line-height: 55px;
+//     color: #FEBF10; `
+
+// const Form = Styled.form `
+// display: flex;
+// flex-direction: column;
+// align-content: flex-start;
+// justify-content: space-evenly;
+// background-color: #7D7D7D;
+// `
+
+// const Label = Styled.label `
+//     position: absolute;
+//     width: 61px;
+//     height: 18px;
+//     left: 930px;
+//     top: 304px;
+//     font-family: Open Sans, Condensed;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 10px;
+//     line-height: 18px;
+//     text-transform: uppercase;
+//     color: #CBCFD4; `
+
+// const Input = Styled.input `
+//     position: absolute;
+//     width: 275px;
+//     height: 40px;
+//     left: 930px;
+//     top: 322px;
+//     background: #FFFFFF;
+//     border-radius: 3px; `
+    
+// const Formdiv = Styled.form `
+//     position: absolute;
+//     width: 43px;
+//     height: 18px;
+//     left: 930px;
+//     top: 397px;
+//     font-family: Open Sans, Condensed;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 10px;
+//     line-height: 18px;
+//     text-transform: uppercase;
+//     color: #CBCFD4; 
+//     `    
+
+// const InnerContainerText = Styled.div `
+//     position: absolute;
+//     width: 275px;
+//     height: 40px;
+//     left: 930px;
+//     top: 415px;
+//     background: #FFFFFF;
+//     border-radius: 3px;
+// `    
+// const Button = Styled.button `
+//     position: absolute;
+//     width: 270px;
+//     height: 40px;
+//     left: 930px;
+//     top: 508px;
+//     background: linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
+//     border-radius: 20px;`
+
+// const Img = Styled.img `
+//     position: absolute;
+//     width: 593px;
+//     height: 820;
+//     left: 0px;
+//     top: 80px;
+//     background: linear-gradient(90deg, #3C444C 0%,
+//         rgba(60, 68, 76, 0) 100%);
+//     box-shadow: 0px 30px 40px, rgba(0, 0, 0, 0.1);`    
+
+
 import React, { useState } from 'react';
 import  { makeStyles } from '@material-ui/styles'
 import login from '../assets/login.jpg'
+import NavBarSignIn from "./NavBarSignIn.js";
 
 const LogIn = makeStyles({
     container: {
@@ -12,6 +112,7 @@ const LogIn = makeStyles({
         height: '100%',
         minHeight: '100vh'
         
+
 
     },
     headerText:{
@@ -88,7 +189,13 @@ export default function UserLogIn() {
        const classes = LogIn()
 
     return(
+
+        <div>
+            <NavBarSignIn />
+        <div>
+
         <div className={classes.container}>
+
 
             <div>
                 <img src={login} alt ="VR" height ="801px" width ="700px" />
@@ -119,13 +226,23 @@ export default function UserLogIn() {
                             value = {inputValue.password}
                             id ={id}
                             onChange ={handleChange} />
-                  </label>
-                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Create an account
-                    </button>   
-                
-              </form>
+
+                  </formdiv>
+                  <button type="submit">CREATE ACCOUNT</button>    
+             </form>
+            </div>
   
         </div>
+    </div>
+
+//                   </label>
+//                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
+//                         Create an account
+//                     </button>   
+                
+//               </form>
+  
+//         </div>
+
     )
 }   

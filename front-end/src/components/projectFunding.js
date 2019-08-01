@@ -74,6 +74,7 @@ function ProjectFunding ({projects}) {
     console.log(projects)
     return (
         <div>
+        <div>
             
             {/* <Route path = "/project-funding/step2" component = {ProjectStep2}></Route> */}
             <TitleContainer>
@@ -94,6 +95,7 @@ function ProjectFunding ({projects}) {
                 })}
                 
             </DivContainer>
+        </div>
         </div>
     )
 }

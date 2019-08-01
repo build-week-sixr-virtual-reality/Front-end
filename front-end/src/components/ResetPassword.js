@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 // import { Link } from "react-router-dom";
 import Styled from "styled-components";
+import NavBarSignIn from "./NavBarSignIn.js";
 
 
 const Container = Styled.div `
@@ -119,6 +120,8 @@ function ResetPassword () {
     console.log(reset);
 
     return (
+        <>
+        <NavBarSignIn />
         <Container>
             <InnerContainerPicture>
                 <Image alt ="vr" src ="https://images.unsplash.com/photo-1563192176-46820b40a0ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80"/>
@@ -135,6 +138,7 @@ function ResetPassword () {
                 </FormDiv>
             </InnerContainerText>
         </Container>
+        </>
     )
 }
 
