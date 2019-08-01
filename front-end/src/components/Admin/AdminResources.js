@@ -60,7 +60,7 @@ const BigDiv = Styled.div `
     
 `
 
-export default function Resources(){
+export default function AdminResources(){
     return(
         <div>
             
@@ -75,25 +75,25 @@ export default function Resources(){
                     <div>
                         <DivBlocks>
                             <HeaderTwo>
-                                <Link to ='/dashboard/resources/a' style ={{color:'#e7ae0f',textDecoration:'none'}}>Tutorial: AR:Painting</Link>
+                                <Link to ='/admin/resources/a' style ={{color:'#e7ae0f',textDecoration:'none'}}>Tutorial: AR:Painting</Link>
                             </HeaderTwo>
                         </DivBlocks>
 
                         <DivBlocks>
                             <HeaderTwo>
-                                <Link to = "/dashboard/resources/b" style ={{color:'#e7ae0f',textDecoration:'none'}}>Tutorial: Choosing a VR Framework</Link>
+                                <Link to = "/admin/resources/b" style ={{color:'#e7ae0f',textDecoration:'none'}}>Tutorial: Choosing a VR Framework</Link>
                             </HeaderTwo>
                         </DivBlocks>
 
                         <DivBlocks>
                             <HeaderTwo>
-                            <Link to = "/dashboard/resources/c" style ={{color:'#e7ae0f',textDecoration:'none'}}>Project Management Guide</Link>
+                            <Link to = "/admin/resources/c" style ={{color:'#e7ae0f',textDecoration:'none'}}>Project Management Guide</Link>
                             </HeaderTwo>
                         </DivBlocks>
 
                         <DivBlocks>
                             <HeaderTwo>
-                                <Link to = "/dashboard/resources/d" style ={{color:'#e7ae0f',textDecoration:'none'}}>Tutorial: Various Applications for XR</Link>
+                                <Link to = "/admin/resources/d" style ={{color:'#e7ae0f',textDecoration:'none'}}>Tutorial: Various Applications for XR</Link>
                             </HeaderTwo>
                         </DivBlocks>
                     </div>

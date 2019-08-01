@@ -1,9 +1,9 @@
 import React from 'react'
-import DashBoardBoxes from './DashBoardBoxes'
+
 
 import {makeStyles} from '@material-ui/core/styles'
 import Styled from "styled-components";
-import Project from './project';
+
 
 const TitleContainer = Styled.div `
     margin: 30px;
@@ -32,22 +32,23 @@ const boxDiv = makeStyles({
     rootBigBox:{
         backgroundColor: "#1D2939",
         width: "720px",
-        height: "484px"
+        height: "484px",
+        marginLeft: "30px"
     }
 })
 
-export default function DashBoardProjects({dashBoardProjects}){
+export default function AdminDashboardProjects({dashBoardProjects}){
     const classes = boxDiv()
     return(
         <div>
         <div>
              <TitleContainer>
-                <Title>Dashboard</Title>
+                <Title>Admin Dashboard</Title>
                 <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Paragraph>
 
             </TitleContainer>
-            <div>
-                <DashBoardBoxes dashBoardProjects = {dashBoardProjects} />
+            <div className = {classes.rootBigBox}>
+                
             </div>
          </div>  
         </div>

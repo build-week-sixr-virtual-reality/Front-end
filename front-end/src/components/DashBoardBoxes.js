@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import DashBoardBigBox from "./DashBoardBigBox.js";
 import {makeStyles} from '@material-ui/core/styles'
 
 
@@ -24,18 +24,32 @@ const miniBoxDiv = makeStyles({
         borderRadius: '10px'
     }
 })
-export default function DashBoardBoxes (){
+export default function DashBoardBoxes ({dashBoardProjects}){
     const classes = miniBoxDiv()
+
+    const [box, setBox] = useState([]);
+
+    // const handleBox = event => {
+    //     setBox(event)
+    // }
+
+    console.log(box);
     return(
         <div>
            
         <div>
             <div className ={classes.container}>
-                <div className = {classes.rootLittleBox} >
+                {dashBoardProjects.map(project => {
+                 return( 
+                 <div className = {classes.rootLittleBox} >
+                    <h2>{project.title}</h2>
+                    <button onClick ={() => setBox(project) }>See Info</button>
+                </div> 
+                    ) 
+                })}
+                
 
-                </div>
-
-                <div className = {classes.rootLittleBox}>
+                {/* <div className = {classes.rootLittleBox}>
                     
                 </div>
 
@@ -45,12 +59,10 @@ export default function DashBoardBoxes (){
 
                 <div className = {classes.rootLittleBox}>
                     
-                </div>
+                </div> */}
             </div>
             <div>
-                <div className ={classes.rootBigBox}>
-
-                </div>
+                <DashBoardBigBox box ={box} />
             </div>
         </div>
         </div>

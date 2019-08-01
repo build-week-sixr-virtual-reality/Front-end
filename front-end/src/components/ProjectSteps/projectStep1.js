@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Styled from "styled-components";
 import { Link } from "react-router-dom";
 
+
+
+
 const TitleContainer = Styled.div `
-    margin: 30px;
+    margin: 30px 30px 0 30px;
     text-align: left;
     padding: 20px;
     background-color: #2d4059;
-    paddin-top: -10px;
+    
 
 `
 
@@ -101,9 +104,6 @@ const DiscardButton = Styled.button  `
 
 `
 
-const DashSpan = Styled.span `
-    color: #2b3648;
-`
 
 function ProjectStep1 ({setStepOne, stepOne}) {
     console.log(stepOne);
@@ -117,7 +117,7 @@ function ProjectStep1 ({setStepOne, stepOne}) {
     }
 
 
-    
+
     return (
         <div>
          <TitleContainer>
@@ -126,17 +126,19 @@ function ProjectStep1 ({setStepOne, stepOne}) {
 
          </TitleContainer>
          <FormDiv>
-             <Steps><CurrentStep>Step 1 </CurrentStep><DashSpan> - </DashSpan><CurrentStep> Step 2 </CurrentStep> - Step 3</Steps>
+             <Steps><CurrentStep>Step 1</CurrentStep> - Step 2 - Step 3</Steps>
              <form onSubmit = {handleSubmit}>
-                 <Info>HOW WOULD FUNDING IMPACT YOUR PROJECT</Info>
-                 <OtherInput type = "text" name = "impact" placeholder = "   Project Description" value = {stepOne.impact} onChange = {handleChange}/>
-                 <Info>FUNDING AMOUNT REQUESTED</Info>
-                 <TitleInput type = "text" name = "amount" placeholder = "   $" value = {stepOne.amount} onChange = {handleChange}/>
+                 <Info>PROJECT TITLE</Info>
+                 <TitleInput type = "text" name = "title" placeholder = "   Project Title" value = {stepOne.title} onChange = {handleChange}/>
+                 <Info>PROJECT DESCRIPTION</Info>
+                 <OtherInput type = "text" name = "description" maxlength="1000" placeholder = "   Project Description" value = {stepOne.description} onChange = {handleChange}/>
+                 <Info>WHY SHOULD WE FUND YOUR IDEA?</Info>
+                 <OtherInput type = "text" name = "why" maxlength="1000" placeholder = "   Why should we fund your idea?" value = {stepOne.why} onChange = {handleChange}/>
                  <ButtonsDiv>
-               <Link to="/dashboard/funding/step3" style = {{textDecoration: "none"}}><NextButton >Next Step</NextButton></Link> 
-               <Link to ="/dashboard/funding" style = {{textDecoration: "none"}}> <DiscardButton >Discard Applicaton</DiscardButton></Link>
+               <Link to="/dashboard/funding/step2" style = {{textDecoration: "none"}} ><NextButton >NEXT STEP</NextButton></Link> 
+               <Link to ="/dashboard/funding"  style = {{textDecoration: "none"}}  > <DiscardButton >DISCARD APPLICATION</DiscardButton></Link>
                 </ButtonsDiv>
-             </form>
+             </form>  
          </FormDiv>
         </div>
     )

@@ -1,21 +1,22 @@
 import React, {useState} from "react";
 import { Route }from "react-router-dom";
 import ProjectFunding from "./projectFunding.js";
-import ProjectStep1 from "./projectStep1.js";
-import ProjectStep2 from "./projectStep2.js";
-import ProjectStep3 from "./projectStep3.js";
+import ProjectStep1 from "./ProjectSteps/projectStep1.js";
+import ProjectStep2 from "./ProjectSteps/projectStep2.js";
+import ProjectStep3 from "./ProjectSteps/projectStep3.js";
+import ProjectSubmitted from "./ProjectSteps/projectSubmitted.js";
 
 
 
-function Project() {
-
-    const [projects, setProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"},]);
+function Project({setDashBoardProjects, dashBoardProjects, projects, setProjects}) {
 
     const addProject = project => {
-        setProjects([...projects, {...project, id: Date.now()}])
+        setProjects([...projects, {...project, id: project.title}])
+        
       }
-
-
+      setDashBoardProjects(projects)
+      
+    
     const [stepOne, setStepOne] = useState({
         title: "",
         description: "",
@@ -26,6 +27,7 @@ function Project() {
         handles: ""
 
     })
+
     return (
         <div>
             <Route exact path ="/dashboard/funding" render = {props => {
@@ -40,6 +42,7 @@ function Project() {
             <Route exact path ="/dashboard/funding/step3" render = {props => {
               return  <ProjectStep3 {...props} setStepOne = {setStepOne} stepOne = {stepOne} setProjects = {setProjects} submitProject = {addProject}/>
             }} />
+            <Route exact path ="/dashboard/funding/submitted" component = {ProjectSubmitted} />
           
 
         </div>

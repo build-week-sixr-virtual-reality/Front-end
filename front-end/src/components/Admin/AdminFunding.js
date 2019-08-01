@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import Styled from "styled-components";
 
 
-import DeleteIcon from "../assets/icons/delete.png";
-
-
 const TitleContainer = Styled.div `
     margin: 30px;
     text-align: left;
@@ -36,41 +33,41 @@ const DivContainer = Styled.div `
     padding: 20px;
 `
 
-const InnerDiv = Styled.div `
-    height: 48px;
-    margin: 10px;
-    padding: 0 10px 0 10px;
-    background-color: #405168;
-    display: flex;
-    justify-content: space-between;
-`
+// const InnerDiv = Styled.div `
+//     height: 48px;
+//     margin: 10px;
+//     padding: 0 10px 0 10px;
+//     background-color: #405168;
+//     display: flex;
+//     justify-content: space-between;
+// `
 
-const ProjectP = Styled.p `
-    margin: auto 10px auto 10px;
-    color: #c5cad1;
-    font-weight: bold;
-`
+// const ProjectP = Styled.p `
+//     margin: auto 10px auto 10px;
+//     color: #c5cad1;
+//     font-weight: bold;
+// `
 
-const AddProjectButton = Styled.button `
-    display: flex;
-    justify-content: center;
-    margin: 10px 10px 20px 10px;
-    padding: 10px 10px;
-    width: 140px;
-    border-radius: 25px;
-    color: #405168;
-    background: linear-gradient(to right, #35c6f2, #a3d89b);
-    border: none;
-    font-weight: bold;
-    font-size: .6rem;
-`
-const Image = Styled.img `
-    margin-top: 5px;
+// const AddProjectButton = Styled.button `
+//     display: flex;
+//     justify-content: center;
+//     margin: 10px 10px 20px 10px;
+//     padding: 10px 10px;
+//     width: 140px;
+//     border-radius: 25px;
+//     color: #405168;
+//     background: linear-gradient(to right, #35c6f2, #a3d89b);
+//     border: none;
+//     font-weight: bold;
+//     font-size: .6rem;
+// `
+// const Image = Styled.img `
+//     margin-top: 5px;
 
-`
+// `
 
 
-function ProjectFunding ({projects}) {
+function AdminFunding ({projects}) {
     console.log(projects)
     return (
         <div>
@@ -83,7 +80,7 @@ function ProjectFunding ({projects}) {
 
             </TitleContainer>
             <DivContainer>
-                <Link to ="/dashboard/funding/step1" style ={{textDecoration: "none"}}><AddProjectButton>SUBMIT NEW PROJECT</AddProjectButton></Link>
+                {/* <Link to ="/dashboard/funding/step1" style ={{textDecoration: "none"}}><AddProjectButton>SUBMIT NEW PROJECT</AddProjectButton></Link>
                 {projects.map(project => {
                     return (
                         <InnerDiv>
@@ -92,7 +89,7 @@ function ProjectFunding ({projects}) {
                           
                         </InnerDiv>
                     ) 
-                })}
+                })} */}
                 
             </DivContainer>
         </div>
@@ -100,4 +97,4 @@ function ProjectFunding ({projects}) {
     )
 }
 
-export default ProjectFunding;
+export default AdminFunding;
