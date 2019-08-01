@@ -47,6 +47,20 @@ const BigBoxContainer = Styled.div `
 
     
 `
+const ImgContainer1 = Styled.img `
+    width: 501px;
+    height: 334.04px;    
+`
+
+const HeaderContainers1 = Styled.h1 `
+    text-align: left
+`
+
+const TextContainers = Styled.p `
+    text-align:left
+    margin-right:50px
+
+`
 
 
 export default function SecondArticle(){
@@ -57,11 +71,29 @@ export default function SecondArticle(){
                     <Paragraph>Resources > <span style ={{textDecoration: 'underline' }}>Tutorial: Choosing a VR Framework</span></Paragraph>
 
             </TitleContainer>
+            
             <div style ={{display:'flex'}}>
                 <ArticleContainer>
+                    <HeaderContainers1>Lorem ipsum dolor sit.</HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    {/* <ImgContainer1 src ={article1} alt = "VR Things" /> */}
+                    <HeaderContainers1>Lorem ipsum dolor sit.</HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    {/* <ImgContainer1 src ={article12} alt ="VR Things" /> */}
+                    <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
 
                 </ArticleContainer>
                 
+                
+                
+            </div>
+            <div>
                 <BigBoxContainer>
 
                 </BigBoxContainer>

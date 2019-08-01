@@ -1,5 +1,8 @@
 import React from 'react'
 import Styled from "styled-components";
+import article1 from '../../assets/ArticleImages/article1.jpg'
+import article12 from '../../assets/ArticleImages/article12.jpg'
+
 
 
 
@@ -34,7 +37,7 @@ const Paragraph = Styled.p `
 
 const ArticleContainer = Styled.div `
     background-color: #ECF9FE;
-    height: 670px
+    height: 100%
     margin: 0px 0px 0px 30px
     width: 809px
 
@@ -50,7 +53,22 @@ const BigBoxContainer = Styled.div `
     
 `
 
-export default function FirstArticle(){
+const ImgContainer1 = Styled.img `
+    width: 501px;
+    height: 334.04px;    
+`
+
+const HeaderContainers1 = Styled.h1 `
+    text-align: left
+`
+
+const TextContainers = Styled.p `
+    text-align:left
+    margin-right:50px
+
+`
+
+export default function FirstArticle(props){
     return(
         <div style ={{width: '100%'}}>
             <TitleContainer>
@@ -60,6 +78,19 @@ export default function FirstArticle(){
             </TitleContainer>
             <div style ={{display:'flex'}}>
                 <ArticleContainer>
+                    <HeaderContainers1>Lorem ipsum dolor sit.</HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <ImgContainer1 src ={article1} alt = "VR Things" />
+                    <HeaderContainers1>Lorem ipsum dolor sit.</HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
+                    <ImgContainer1 src ={article12} alt ="VR Things" />
+                    <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
+                    <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
 
                 </ArticleContainer>
                 
