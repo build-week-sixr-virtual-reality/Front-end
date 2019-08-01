@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
 import  { makeStyles } from '@material-ui/styles'
-import login from '../assets/login.jpg'
+import Styled from "styled-components";
+import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
+
 
 const LogIn = makeStyles({
     container: {
@@ -43,24 +45,45 @@ const LogIn = makeStyles({
         
     },
     button:{
+        position: 'absolute',
+        width: '270px',
+        height: '40px',
+        left: '930px',
+        top: '508px',
+        borderRadius: '20px',
         background: 'linear-gradient(to right, #ee785e, #a255ef)',
-        padding: '10px 0px',
-        fontSize: '1rem',
-        color: '#FFFFFF',
-        textAlign: 'center',
-        borderRadius: '5px',
-        marginTop:'20px',
-        marginLeft: '50px',
-        width:'81%'
+        fontFamily: 'Open Sans',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '10px',
+        lineHeight: '14px',
+        display: 'flex',
+        alignItems: 'center',
+        textTransform: 'uppercase',
+        color: '#FFFFFF'
+        
     },
     inputText:{
         padding: '10px 150px 10px 0px',
         borderRadius: '5px'
     }
 
-
 })
 
+const A = Styled.a `
+   position: absolute;
+   width: 73px;
+   height: 18px;
+   left: 1132px;
+   top: 461px;
+   font-family:Open Sans Condensed;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 10px;
+   line-height: 18px;
+   text-decoration: underline;
+   color: #CBCFD4;
+ `
 export default function UserLogIn() {
 
 
@@ -127,13 +150,26 @@ export default function UserLogIn() {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
-                            onChange ={handleChange} />
+
+                            onChange ={handleChange} /> 
+                         {/* onChange ={handleChange} /> */}
+
+
+
+                  {/* </formdiv>
+                  <button type="submit">CREATE ACCOUNT</button>    
+             </form>
+            </div>
+  
+        </div>
+    </div> */}
 
                   </label>
+                     
+                     <A href="">Forgot Password?</A>
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Create an account
+                        Create an account >
                     </button>   
-                
               </form>
   
         </div>
