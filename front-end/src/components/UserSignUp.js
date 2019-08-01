@@ -3,7 +3,8 @@ import {Link,Route} from 'react-router-dom'
 import { makeStyles } from '@material-ui/styles';
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
-import LeftNav from './leftnav'
+import LeftNav from './leftnav';
+import { registerUser } from '../actions/index';
 
 // styling
 const SignUp = makeStyles({
@@ -70,7 +71,7 @@ export default function UserSignUp(){
     const [inputValue,setInputValue] = useState({
         firstName:"Cristiano",
         lastName:"Ronaldo",
-        email: "RonaldoFC@gmail.com",
+        username: "RonaldoFC@gmail.com",
         password: "hello",
         rePassword: "hello"
     })
@@ -87,6 +88,7 @@ export default function UserSignUp(){
         if (inputValue.password !== inputValue.rePassword) {
             alert("Passwords don't match");
         } 
+        registerUser(inputValue);
             // make API call
             setUsers([...users,inputValue])
             setID(prevId => prevId + 1)
@@ -137,8 +139,8 @@ export default function UserSignUp(){
                             <input className ={classes.inputText}
                                 type ="text" 
                                 placeholder ="Enter Email" 
-                                name ="email"
-                                value = {inputValue.email}
+                                name ="username"
+                                value = {inputValue.username}
                                 id ={id}
                                 onChange ={handleChange}
 

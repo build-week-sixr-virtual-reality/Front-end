@@ -148,7 +148,7 @@ const rootReducer = (state = initialState, action) => {
         error: "",
         errorStatusCode: null,
         fetchingUsers: false,
-        users: [...users, action.payload]
+        users: [...this.users, action.payload]
       };
     case FETCH_USERS_FAILURE:
       return {
