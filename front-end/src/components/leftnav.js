@@ -13,6 +13,7 @@ import Project from './project.js';
 
 
 
+
 // Images
 import DashboardImage from "../assets/icons/dashboardTabEdit.png";
 import ProjectFundingImage from "../assets/icons/fundingTabEdit.png";
@@ -21,6 +22,7 @@ import MentoringImage from "../assets/icons/mentoringtabEdit.png";
 import SettingsImage from "../assets/icons/settingsTabEdit.png";
 import LogoutImage from "../assets/icons/LogoutTabEdit.png";
 import Mentoring from "./Mentoring";
+import ResourcesHub from "./ResourcesHub";
 
 
 const MainContainer = Styled.div `
@@ -146,7 +148,7 @@ function LeftNav() {
 {/* //         <Route exact path = "/dashboard" component= {CalendarDate} /> */}
 
         <Route path = "/dashboard/funding"  component = {Project} />
-        <Route exact path = "/dashboard/resources" component = {Resources}/>
+        <Route  path = "/dashboard/resources" component = {ResourcesHub}/>
         <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
 
 
