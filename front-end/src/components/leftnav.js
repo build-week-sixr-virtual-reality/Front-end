@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Styled from "styled-components";
 import { NavLink, Route } from "react-router-dom";
 import "../App.css";
@@ -94,6 +94,13 @@ const Name = Styled.h3 `
 // `
 
 function LeftNav() {
+   const [dashBoardProjects, setDashBoardProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"}]);
+   const [projects, setProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"},]);
+   console.log(dashBoardProjects);
+
+
+
+
     return (
         <MainContainer>
         <Container>
@@ -142,12 +149,16 @@ function LeftNav() {
 
         </Container>
 
-        <Route exact path = "/dashboard" component ={DashBoardProjects} />
+        <Route exact path = "/dashboard"  render = {props => {
+            return <DashBoardProjects {...props} dashBoardProjects = {dashBoardProjects} />
+        }}/>
 
 
 {/* //         <Route exact path = "/dashboard" component= {CalendarDate} /> */}
 
-        <Route path = "/dashboard/funding"  component = {Project} />
+        <Route path = "/dashboard/funding"  render = {props => {
+            return <Project {...props} dashBoardProjects ={dashBoardProjects} setDashBoardProjects = {setDashBoardProjects} projects= {projects} setProjects = {setProjects}/> 
+            }} />
         <Route  path = "/dashboard/resources" component = {ResourcesHub}/>
         <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
 

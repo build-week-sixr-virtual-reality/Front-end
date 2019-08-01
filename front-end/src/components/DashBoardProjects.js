@@ -3,6 +3,7 @@ import DashBoardBoxes from './DashBoardBoxes'
 
 import {makeStyles} from '@material-ui/core/styles'
 import Styled from "styled-components";
+import Project from './project';
 
 const TitleContainer = Styled.div `
     margin: 30px;
@@ -35,7 +36,7 @@ const boxDiv = makeStyles({
     }
 })
 
-export default function DashBoardProjects(){
+export default function DashBoardProjects({dashBoardProjects}){
     const classes = boxDiv()
     return(
         <div>
@@ -46,7 +47,7 @@ export default function DashBoardProjects(){
 
             </TitleContainer>
             <div>
-                <DashBoardBoxes />
+                <DashBoardBoxes dashBoardProjects = {dashBoardProjects} />
             </div>
          </div>  
         </div>
