@@ -3,6 +3,7 @@ import DashBoardBoxes from './DashBoardBoxes'
 
 import {makeStyles} from '@material-ui/core/styles'
 import Styled from "styled-components";
+import Project from './project';
 
 const TitleContainer = Styled.div `
     margin: 30px;

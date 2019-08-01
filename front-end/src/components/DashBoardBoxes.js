@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import DashBoardBigBox from "./DashBoardBigBox.js";
 import {makeStyles} from '@material-ui/core/styles'
 
 
@@ -26,6 +26,14 @@ const miniBoxDiv = makeStyles({
 })
 export default function DashBoardBoxes ({dashBoardProjects}){
     const classes = miniBoxDiv()
+
+    const [box, setBox] = useState([]);
+
+    // const handleBox = event => {
+    //     setBox(event)
+    // }
+
+    console.log(box);
     return(
         <div>
            
@@ -35,7 +43,7 @@ export default function DashBoardBoxes ({dashBoardProjects}){
                  return( 
                  <div className = {classes.rootLittleBox} >
                     <h2>{project.title}</h2>
-                    <button>See Info</button>
+                    <button onClick ={() => setBox(project) }>See Info</button>
                 </div> 
                     ) 
                 })}
@@ -54,9 +62,7 @@ export default function DashBoardBoxes ({dashBoardProjects}){
                 </div> */}
             </div>
             <div>
-                <div className ={classes.rootBigBox}>
-
-                </div>
+                <DashBoardBigBox box ={box} />
             </div>
         </div>
         </div>
