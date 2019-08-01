@@ -73,7 +73,7 @@ function Mentoring () {
         <div>
            <TitleContainer>
                 <Title>Find a Mentor</Title>
-                <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Paragraph>
+                <Paragraph>We have a range of industry experts and mentors available for 1-on-1 sessions, where you can discuss anything from project managment to niche, technical hurdles. Browse through the available mentors below to find a match for you and your project.</Paragraph>
 
             </TitleContainer>
 
