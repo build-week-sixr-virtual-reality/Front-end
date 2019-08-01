@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Styled from "styled-components";
 
 
@@ -30,8 +30,8 @@ const Paragraph = Styled.p `
 
 const DivContainer = Styled.div `
     background-color: #1d2939;
+    height: 100%;
     max-width: 720px;
-    height: 550px;
     margin: 20px 30px 30px 30px;
     padding: 20px;
 `
@@ -48,18 +48,32 @@ const InnerDiv = Styled.div `
 const ProjectP = Styled.p `
     margin: auto 10px auto 10px;
     color: #c5cad1;
+    font-weight: bold;
 `
 
 const AddProjectButton = Styled.button `
     display: flex;
-    flex-direction: flex-start;
+    justify-content: center;
     margin: 10px 10px 20px 10px;
+    padding: 10px 10px;
+    width: 140px;
+    border-radius: 25px;
+    color: #405168;
+    background: linear-gradient(to right, #35c6f2, #a3d89b);
+    border: none;
+    font-weight: bold;
+    font-size: .6rem;
+`
+const Image = Styled.img `
+    margin-top: 5px;
+
 `
 
 
 function ProjectFunding ({projects}) {
     console.log(projects)
     return (
+        <div>
         <div>
             
             {/* <Route path = "/project-funding/step2" component = {ProjectStep2}></Route> */}
@@ -69,18 +83,19 @@ function ProjectFunding ({projects}) {
 
             </TitleContainer>
             <DivContainer>
-                <Link to ="/dashboard/funding/step1"><AddProjectButton>Add Project</AddProjectButton></Link>
+                <Link to ="/dashboard/funding/step1" style ={{textDecoration: "none"}}><AddProjectButton>SUBMIT NEW PROJECT</AddProjectButton></Link>
                 {projects.map(project => {
                     return (
                         <InnerDiv>
                             <ProjectP>{project.title}</ProjectP>
-                            <img src ={DeleteIcon} alt = "Delete project" style = {{width: "30px", height: "35px"}} />
+                            <Image src ={DeleteIcon} alt = "Delete project" style = {{width: "30px", height: "35px"}} />
                           
                         </InnerDiv>
                     ) 
                 })}
                 
             </DivContainer>
+        </div>
         </div>
     )
 }
