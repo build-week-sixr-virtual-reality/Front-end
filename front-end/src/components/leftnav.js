@@ -9,6 +9,7 @@ import DashBoardProjects from "./DashBoardProjects.js"
 // import ProjectFunding from './projectFunding.js';
 // import Resources from './Resources'
 import Project from './project.js';
+import UserSignUp from './UserSignUp'
 
 
 
@@ -93,13 +94,16 @@ const Name = Styled.h3 `
 //     background-color: #2b3648;
 // `
 
-function LeftNav() {
+function LeftNav({users}) {
    const [dashBoardProjects, setDashBoardProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"}]);
    const [projects, setProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"},]);
-   console.log(dashBoardProjects);
+   const [userName,setUserName] = useState({name:""})
 
+   
+//    console.log(dashBoardProjects);
+    console.log(users)
 
-
+    
 
     return (
         <MainContainer>
@@ -108,7 +112,7 @@ function LeftNav() {
             {/* Top div with name and picture */}
             <NamePic>
                 <Image alt = "stock-pic" src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
-                <Name>Insert Name</Name>
+                <Name></Name>
             </NamePic>
 
             {/* Middle div with icons and links */}
@@ -161,7 +165,7 @@ function LeftNav() {
             }} />
         <Route  path = "/dashboard/resources" component = {ResourcesHub}/>
         <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
-
+            
 
         </MainContainer>
     )

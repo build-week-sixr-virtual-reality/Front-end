@@ -68,17 +68,18 @@ export default function UserSignUp(){
 
     // input state
     const [inputValue,setInputValue] = useState({
-        firstName:"",
-        lastName:"",
-        email: "",
-        password: "",
-        rePassword: ""
+        firstName:"Cristiano",
+        lastName:"Ronaldo",
+        email: "RonaldoFC@gmail.com",
+        password: "hello",
+        rePassword: "hello"
     })
     const [users,setUsers] = useState([])
     const [id,setID] = useState(0)
 
     const handleChange = (e) =>{
         setInputValue({...inputValue,[e.target.name] : e.target.value,id})
+       
     }
 
     const handleSubmit = (e) =>{
@@ -176,7 +177,7 @@ export default function UserSignUp(){
 
                     <button type ="submit" onClick ={handleSubmit} className ={classes.button} >
                                 <Link to = "/dashboard"> Create an Account</Link>
-                                <Route path = "/dashboard" render ={props => <LeftNav {...props} users = {users}  />} />
+                                
                     </button>
                     <p>Already have an account?<span><Link to = "/login">Sign-in here</Link></span></p>
                     
