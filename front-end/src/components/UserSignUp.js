@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from 'react'; 
+import {Link,Route} from 'react-router-dom'
 import { makeStyles } from '@material-ui/styles';
-import login from '../assets/login.jpg'
+import login from '../assets/login.jpg';
+import NavBarSignIn from "./NavBarSignIn.js";
+import LeftNav from './leftnav'
 
 // styling
 const SignUp = makeStyles({
@@ -66,7 +69,7 @@ export default function UserSignUp(){
     // input state
     const [inputValue,setInputValue] = useState({
         firstName:"",
-        lastname:"",
+        lastName:"",
         email: "",
         password: "",
         rePassword: ""
@@ -82,26 +85,27 @@ export default function UserSignUp(){
         e.preventDefault()
         if (inputValue.password !== inputValue.rePassword) {
             alert("Passwords don't match");
-        } else {
+        } 
             // make API call
             setUsers([...users,inputValue])
             setID(prevId => prevId + 1)
-           
-        }
-        setInputValue({firstName: "",lastName:"",email: '',password: '',rePassword : ''})
-        console.log(users)
+            console.log(users)
+            
+            setInputValue({firstName: "",lastName:"",email: '',password: '',rePassword : ''})
+       
     }
 
     const classes = SignUp()
 
     return(
-
+        <div>
+            <NavBarSignIn />
             <div className = {classes.container}>
                 <div>
                     <img src ={login} alt ="VR" height ="801px" width ="700px" />
                 </div>
                 
-                <form className ={classes.formStyle}>
+                <form onSubmit = {handleSubmit} className ={classes.formStyle}>
                     <h1 className= {classes.headerText}>Register an <br/> Account</h1>
                         <label className = {classes.labels}>
                             First Name
@@ -121,7 +125,7 @@ export default function UserSignUp(){
                                 type ="text" 
                                 placeholder ="Enter last name" 
                                 name ="lastName"
-                                value = {inputValue.lastname}
+                                value = {inputValue.lastName}
                                 id ={id}
                                 onChange ={handleChange}
 
@@ -171,9 +175,10 @@ export default function UserSignUp(){
                     
 
                     <button type ="submit" onClick ={handleSubmit} className ={classes.button} >
-                        Create an account
+                                <Link to = "/dashboard"> Create an Account</Link>
+                                <Route path = "/dashboard" render ={props => <LeftNav {...props} users = {users}  />} />
                     </button>
-                    <p>Already have an account?<span><a href ="http://google.com">Sign-in here</a></span></p>
+                    <p>Already have an account?<span><Link to = "/login">Sign-in here</Link></span></p>
                     
                 </form>
 
@@ -184,11 +189,7 @@ export default function UserSignUp(){
 
         
                
-    
+        </div>
     )
 }
 
-{/* <div>
-                    <p>Already have an account?</p>
-                    <span>Sign-in here</span>
-                </div> */}

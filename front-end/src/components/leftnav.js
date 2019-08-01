@@ -1,14 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import Styled from "styled-components";
 import { NavLink, Route } from "react-router-dom";
 import "../App.css";
 
-import CalendarDate from "./Calendar.js";
+// import CalendarDate from "./Calendar.js";
 
 import DashBoardProjects from "./DashBoardProjects.js"
-import ProjectFunding from './projectFunding.js';
-import Resources from './Resources'
+// import ProjectFunding from './projectFunding.js';
+// import Resources from './Resources'
 import Project from './project.js';
+
 
 
 
@@ -21,6 +22,7 @@ import MentoringImage from "../assets/icons/mentoringtabEdit.png";
 import SettingsImage from "../assets/icons/settingsTabEdit.png";
 import LogoutImage from "../assets/icons/LogoutTabEdit.png";
 import Mentoring from "./Mentoring";
+import ResourcesHub from "./ResourcesHub";
 
 
 const MainContainer = Styled.div `
@@ -92,6 +94,13 @@ const Name = Styled.h3 `
 // `
 
 function LeftNav() {
+   const [dashBoardProjects, setDashBoardProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"}]);
+   const [projects, setProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"},]);
+   console.log(dashBoardProjects);
+
+
+
+
     return (
         <MainContainer>
         <Container>
@@ -109,7 +118,7 @@ function LeftNav() {
                 </NavLink>
               
 
-                <NavLink to ="/dashboard/project-funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding" exact>
+                <NavLink to ="/dashboard/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding">
                     <img src = {ProjectFundingImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
@@ -118,7 +127,7 @@ function LeftNav() {
                     <img src = {MentoringImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
 
-                <NavLink  to ="/dashboard/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources" exact>
+                <NavLink  to ="/dashboard/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources">
                     <img src = {ResourcesImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
                 
@@ -140,10 +149,17 @@ function LeftNav() {
 
         </Container>
 
-        <Route exact path = "/dashboard" component ={DashBoardProjects} />
-//         <Route exact path = "/dashboard" component= {CalendarDate} />
-        <Route path = "/dashboard/funding"  component = {Project} />
-        <Route exact path = "/dashboard/resources" component = {Resources}/>
+        <Route exact path = "/dashboard"  render = {props => {
+            return <DashBoardProjects {...props} dashBoardProjects = {dashBoardProjects} />
+        }}/>
+
+
+{/* //         <Route exact path = "/dashboard" component= {CalendarDate} /> */}
+
+        <Route path = "/dashboard/funding"  render = {props => {
+            return <Project {...props} dashBoardProjects ={dashBoardProjects} setDashBoardProjects = {setDashBoardProjects} projects= {projects} setProjects = {setProjects}/> 
+            }} />
+        <Route  path = "/dashboard/resources" component = {ResourcesHub}/>
         <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
 
 

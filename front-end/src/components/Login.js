@@ -1,7 +1,10 @@
+
 import React, { useState } from 'react';
-import  { makeStyles } from '@material-ui/styles';
-import Styled from 'styled-components';
+import  { makeStyles } from '@material-ui/styles'
+import Styled from "styled-components";
 import login from '../assets/login.jpg';
+import NavBarSignIn from "./NavBarSignIn.js";
+
 
 const LogIn = makeStyles({
     container: {
@@ -13,6 +16,7 @@ const LogIn = makeStyles({
         height: '100%',
         minHeight: '100vh'
         
+
 
     },
     headerText:{
@@ -110,7 +114,13 @@ export default function UserLogIn() {
        const classes = LogIn()
 
     return(
+
+        <div>
+            <NavBarSignIn />
+        <div>
+
         <div className={classes.container}>
+
 
             <div>
                 <img src={login} alt ="VR" height ="801px" width ="700px" />
@@ -140,14 +150,36 @@ export default function UserLogIn() {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
+<<<<<<< HEAD
                             onChange ={handleChange} />                            
                   </label>              
                     <A href="">Forgot Password?</A>
+=======
+
+                            onChange ={handleChange} /> 
+                         {/* onChange ={handleChange} /> */}
+
+
+
+                  {/* </formdiv>
+                  <button type="submit">CREATE ACCOUNT</button>    
+             </form>
+            </div>
+  
+        </div>
+    </div> */}
+
+                  </label>
+                     
+                     <A href="">Forgot Password?</A>
+>>>>>>> 89fdf84890aec0c8ffbacf47a4707d07ba87e9ba
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
                         Create an account >
                     </button>   
               </form>
   
         </div>
+     </div>
+    </div>
     )
 }   
