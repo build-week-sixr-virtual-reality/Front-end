@@ -25,9 +25,6 @@ const Paragraph = Styled.p `
     color: white;
     font-size: 1.2rem
     margin-right: 10px
-  
-    
-   
 `
 
 const ArticleContainer = Styled.div `
