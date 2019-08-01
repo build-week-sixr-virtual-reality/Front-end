@@ -112,7 +112,7 @@ export default function UserLogIn() {
         };
         
        
-       const classes = LogIn()
+       const classes = LogIn() {
 
     return(
 
@@ -151,32 +151,18 @@ export default function UserLogIn() {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
-<<<<<<< HEAD
-                            onChange ={handleChange} />                            
-                  </label>              
+                            />
+                    </label>
+
                     <A href="">Forgot Password?</A>
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Create an account >
-=======
-
-                            onChange ={handleChange} /> 
-                         {/* onChange ={handleChange} /> */}
-
-
-
-
-                  </label>
-                     
-                     <Link style ={{marginTop: '20px',paddingLeft: '50px'}} to ="/reset">Reset Password</Link>
-                     
-                    <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        <Link to = "/dashboard"> Sign in </Link>
->>>>>>> ec123bfebb5abda170695c0d200e3d52e179dd40
-                    </button>   
-              </form>
-  
-        </div>
-     </div>
-    </div>
-    )
-}   
+                        Create an account 
+                    </button>
+                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
+                        Admin 
+                    </button>
+                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
+                        Users
+                    </button>
+)
+}
