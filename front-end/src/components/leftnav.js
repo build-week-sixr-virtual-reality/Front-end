@@ -111,7 +111,7 @@ function LeftNav() {
                 </NavLink>
               
 
-                <NavLink to ="/dashboard/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding" exact>
+                <NavLink to ="/dashboard/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding">
                     <img src = {ProjectFundingImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
@@ -120,7 +120,7 @@ function LeftNav() {
                     <img src = {MentoringImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
 
-                <NavLink  to ="/dashboard/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources" exact>
+                <NavLink  to ="/dashboard/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources">
                     <img src = {ResourcesImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
                 
