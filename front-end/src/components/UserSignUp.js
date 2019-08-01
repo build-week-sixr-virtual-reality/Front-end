@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'; 
 import { makeStyles } from '@material-ui/styles';
-import login from '../assets/login.jpg'
+import login from '../assets/login.jpg';
+import NavBarSignIn from "./NavBarSignIn.js";
 
 // styling
 const SignUp = makeStyles({
@@ -95,7 +96,8 @@ export default function UserSignUp(){
     const classes = SignUp()
 
     return(
-
+        <div>
+            <NavBarSignIn />
             <div className = {classes.container}>
                 <div>
                     <img src ={login} alt ="VR" height ="801px" width ="700px" />
@@ -184,7 +186,7 @@ export default function UserSignUp(){
 
         
                
-    
+        </div>
     )
 }
 

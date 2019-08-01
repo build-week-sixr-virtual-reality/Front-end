@@ -111,7 +111,7 @@ function LeftNav() {
                 </NavLink>
               
 
-                <NavLink to ="/dashboard/project-funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding" exact>
+                <NavLink to ="/dashboard/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding" exact>
                     <img src = {ProjectFundingImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
@@ -143,7 +143,10 @@ function LeftNav() {
         </Container>
 
         <Route exact path = "/dashboard" component ={DashBoardProjects} />
+
+
 {/* //         <Route exact path = "/dashboard" component= {CalendarDate} /> */}
+
         <Route path = "/dashboard/funding"  component = {Project} />
         <Route  path = "/dashboard/resources" component = {ResourcesHub}/>
         <Route exact path = "/dashboard/mentoring" component = {Mentoring} />

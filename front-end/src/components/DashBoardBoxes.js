@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {makeStyles} from '@material-ui/core/styles'
 
 
@@ -27,6 +28,8 @@ export default function DashBoardBoxes (){
     const classes = miniBoxDiv()
     return(
         <div>
+           
+        <div>
             <div className ={classes.container}>
                 <div className = {classes.rootLittleBox} >
 
@@ -49,6 +52,7 @@ export default function DashBoardBoxes (){
 
                 </div>
             </div>
+        </div>
         </div>
     )
 }

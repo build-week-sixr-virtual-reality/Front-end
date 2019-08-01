@@ -8,9 +8,9 @@ import {
   REGISTER_ADMIN_START,
   REGISTER_ADMIN_SUCCESS,
   REGISTER_ADMIN_FAILURE,
-  EDIT_USER_START,
-  EDIT_USER_SUCCESS,
-  EDIT_USER_FAILURE,
+  // EDIT_USER_START,
+  // EDIT_USER_SUCCESS,
+  // EDIT_USER_FAILURE,
   DELETE_USER_START,
   DELETE_USER_SUCCESS,
   DELETE_USER_FAILURE,
@@ -20,13 +20,15 @@ import {
   ADD_PROJECT_START,
   ADD_PROJECT_SUCCESS,
   ADD_PROJECT_FAILURE,
-  EDIT_PROJECT_START,
-  EDIT_PROJECT_SUCCESS,
-  EDIT_PROJECT_FAILURE,
-  PAYMENT_INITIATED,
-  PAYMENT_COMPLETED,
-  PAYMENT_PROBLEM,
-  FETCH_USERS_START
+  // EDIT_PROJECT_START,
+  // EDIT_PROJECT_SUCCESS,
+  // EDIT_PROJECT_FAILURE,
+  // PAYMENT_INITIATED,
+  // PAYMENT_COMPLETED,
+  // PAYMENT_PROBLEM,
+  FETCH_USERS_START,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -108,25 +110,25 @@ const rootReducer = (state = initialState, action) => {
       };
     // --EDITING
 
-    case EDIT_PROJECT_START:
-      return {
-        ...state,
-        editingProject: true
-      };
-    case EDIT_PROJECT_SUCCESS:
-      return {
-        ...state,
-        editingProject: false,
-        error: "",
-        errorStatusCode: null
-      };
-    case EDIT_PROJECT_FAILURE:
-      return {
-        ...state,
-        editingProject: false,
-        error: action.payload.data.error,
-        errorStatusCode: action.payload.status
-      };
+    // case EDIT_PROJECT_START:
+    //   return {
+    //     ...state,
+    //     editingProject: true
+    //   };
+    // case EDIT_PROJECT_SUCCESS:
+    //   return {
+    //     ...state,
+    //     editingProject: false,
+    //     error: "",
+    //     errorStatusCode: null
+    //   };
+    // case EDIT_PROJECT_FAILURE:
+    //   return {
+    //     ...state,
+    //     editingProject: false,
+    //     error: action.payload.data.error,
+    //     errorStatusCode: action.payload.status
+    //   };
 
     // USER CONTROL - ADMIN
     // --FETCH USERS
@@ -136,21 +138,21 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         fetchingUsers: true
       };
-    // case FETCH_USERS_SUCCESS:
-    //   return {
-    //     ...state,
-    //     error: "",
-    //     errorStatusCode: null,
-    //     fetchingUsers: false,
-    //     users: action.payload
-    //   };
-    // case FETCH_USERS_FAILURE:
-    //   return {
-    //     ...state,
-    //     fetchingUsers: false,
-    //     error: action.payload.data.error,
-    //     errorStatusCode: action.payload.status
-    //   };
+    case FETCH_USERS_SUCCESS:
+      return {
+        ...state,
+        error: "",
+        errorStatusCode: null,
+        fetchingUsers: false,
+        users: action.payload
+      };
+    case FETCH_USERS_FAILURE:
+      return {
+        ...state,
+        fetchingUsers: false,
+        error: action.payload.data.error,
+        errorStatusCode: action.payload.status
+      };
 
     // --DELETING USERS
 
