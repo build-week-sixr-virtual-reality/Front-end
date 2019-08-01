@@ -151,16 +151,8 @@ export default function UserLogIn() {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
-<<<<<<< HEAD
-                            onChange ={handleChange} />                            
-                  </label>              
-                    <A href="">Forgot Password?</A>
-                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Create an account >
-=======
-
                             onChange ={handleChange} /> 
-                         {/* onChange ={handleChange} /> */}
+                      
 
 
 
@@ -171,7 +163,7 @@ export default function UserLogIn() {
                      
                     <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
                         <Link to = "/dashboard"> Sign in </Link>
->>>>>>> ec123bfebb5abda170695c0d200e3d52e179dd40
+
                     </button>   
               </form>
   
@@ -180,3 +172,12 @@ export default function UserLogIn() {
     </div>
     )
 }   
+
+
+
+// <<<<<<< HEAD
+//                             onChange ={handleChange} />                            
+//                   </label>              
+//                     <A href="">Forgot Password?</A>
+//                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
+//                         Create an account ></button>
