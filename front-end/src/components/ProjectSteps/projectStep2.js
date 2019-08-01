@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const TitleContainer = Styled.div `
-    margin: 30px;
+    margin: 30px 30px 0 30px;
     text-align: left;
     padding: 20px;
     background-color: #2d4059;
@@ -22,6 +22,7 @@ const Paragraph = Styled.p `
     color: #8c96a4;
    
 `
+
 const FormDiv = Styled.div `
     margin: 0 30px 30px 30px;
     height: 100%;
@@ -49,6 +50,12 @@ const Info = Styled.p `
 
 `
 
+const TitleInput = Styled.input `
+    border: none;
+    height: 30px; 
+    width: 70%;
+`
+
 const OtherInput = Styled.textarea `
     border: none;
     width: 70%;
@@ -69,7 +76,7 @@ const NextButton = Styled.button `
     justify-content: center;
     margin: 10px 10px 20px 10px;
     padding: 10px 10px;
-    width: 140px;
+    width: 90px;
     border-radius: 25px;
     color: #405168;
     background: linear-gradient(to right, #35c6f2, #a3d89b);
@@ -98,8 +105,8 @@ const DashSpan = Styled.span `
     color: #2b3648;
 `
 
-function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
-    console.log(stepOne)
+function ProjectStep1 ({setStepOne, stepOne}) {
+    console.log(stepOne);
 
     const handleChange = event => {
         setStepOne({...stepOne, [event.target.name]: event.target.value})
@@ -107,11 +114,9 @@ function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        submitProject(stepOne);
-        history.push("/dashboard/funding")
     }
 
-    
+
     
     return (
         <div>
@@ -121,15 +126,15 @@ function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
 
          </TitleContainer>
          <FormDiv>
-             <Steps><CurrentStep>Step 1 </CurrentStep><DashSpan>-</DashSpan><CurrentStep>Step 2</CurrentStep><DashSpan> - </DashSpan><CurrentStep>Step 3</CurrentStep>  </Steps>
-             <form>
-                 <Info>GIVE USE A QUICK SUMMARY OF YOUR PROJECT PLAN</Info>
-                 <OtherInput type = "text" name = "summary" placeholder = "   Project Description" value = {stepOne.summary} onChange = {handleChange}/>
-                 <Info>ARE THERE HURDLES THAT PREVENT YOU FROM WORKING ON THIS PROJECT?</Info>
-                 <OtherInput type = "text" name = "handles" placeholder = "   Why should we fund your idea?" value = {stepOne.handles} onChange = {handleChange}/>
+             <Steps><CurrentStep>Step 1 </CurrentStep><DashSpan> - </DashSpan><CurrentStep> Step 2 </CurrentStep> - Step 3</Steps>
+             <form onSubmit = {handleSubmit}>
+                 <Info>HOW WOULD FUNDING IMPACT YOUR PROJECT</Info>
+                 <OtherInput type = "text" name = "impact" placeholder = "   Project Description" value = {stepOne.impact} onChange = {handleChange}/>
+                 <Info>FUNDING AMOUNT REQUESTED</Info>
+                 <TitleInput type = "text" name = "amount" placeholder = "   $" value = {stepOne.amount} onChange = {handleChange}/>
                  <ButtonsDiv>
-                 <NextButton onClick ={handleSubmit}  >SUBMIT APPLICATION</NextButton>
-                 <Link to ="/dashboard/funding" style = {{textDecoration: "none"}}> <DiscardButton >DISCARD APPLICATION</DiscardButton></Link>
+               <Link to="/dashboard/funding/step3" style = {{textDecoration: "none"}}><NextButton >Next Step</NextButton></Link> 
+               <Link to ="/dashboard/funding" style = {{textDecoration: "none"}}> <DiscardButton >Discard Applicaton</DiscardButton></Link>
                 </ButtonsDiv>
              </form>
          </FormDiv>
@@ -138,4 +143,4 @@ function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
 
 }
 
-export default ProjectStep3;
+export default ProjectStep1;

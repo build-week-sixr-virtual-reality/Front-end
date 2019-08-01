@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import { Route }from "react-router-dom";
 import ProjectFunding from "./projectFunding.js";
-import ProjectStep1 from "./projectStep1.js";
-import ProjectStep2 from "./projectStep2.js";
-import ProjectStep3 from "./projectStep3.js";
+import ProjectStep1 from "./ProjectSteps/projectStep1.js";
+import ProjectStep2 from "./ProjectSteps/projectStep2.js";
+import ProjectStep3 from "./ProjectSteps/projectStep3.js";
+import ProjectSubmitted from "./ProjectSteps/projectSubmitted.js";
 
 
 
@@ -40,6 +41,7 @@ function Project() {
             <Route exact path ="/dashboard/funding/step3" render = {props => {
               return  <ProjectStep3 {...props} setStepOne = {setStepOne} stepOne = {stepOne} setProjects = {setProjects} submitProject = {addProject}/>
             }} />
+            <Route exact path ="/dashboard/funding/submitted" component = {ProjectSubmitted} />
           
 
         </div>

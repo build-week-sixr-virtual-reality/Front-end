@@ -3,11 +3,11 @@ import Styled from "styled-components";
 import { NavLink, Route } from "react-router-dom";
 import "../App.css";
 
-import CalendarDate from "./Calendar.js";
+// import CalendarDate from "./Calendar.js";
 
 import DashBoardProjects from "./DashBoardProjects.js"
-import ProjectFunding from './projectFunding.js';
-import Resources from './Resources'
+// import ProjectFunding from './projectFunding.js';
+// import Resources from './Resources'
 import Project from './project.js';
 
 
