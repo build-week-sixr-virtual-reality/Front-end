@@ -35,6 +35,7 @@ export default function DashBoardBoxes ({dashBoardProjects}){
                  return( 
                  <div className = {classes.rootLittleBox} >
                     <h2>{project.title}</h2>
+                    <button>See Info</button>
                 </div> 
                     ) 
                 })}

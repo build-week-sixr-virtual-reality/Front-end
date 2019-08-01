@@ -8,15 +8,13 @@ import ProjectSubmitted from "./ProjectSteps/projectSubmitted.js";
 
 
 
-function Project({setDashBoardProjects, dashBoardProjects}) {
-
-    const [projects, setProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"},]);
+function Project({setDashBoardProjects, dashBoardProjects, projects, setProjects}) {
 
     const addProject = project => {
-        setProjects({...projects, [project.name]: projects.value})
+        setProjects([...projects, {...project, id: Date.now()}])
         
       }
-      setDashBoardProjects([...dashBoardProjects, projects])
+      setDashBoardProjects(projects);
       
     
     const [stepOne, setStepOne] = useState({
