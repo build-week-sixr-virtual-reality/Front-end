@@ -30,6 +30,7 @@ export default function DashBoardBigBo ({box}){
         <div>
             
                 <div className ={classes.rootBigBox}>
+
                     <p className = {classes.descriptionTitles}>Title</p>
                     <h2>{box.title}</h2>
                     <p className = {classes.descriptionTitles}>Description</p>
@@ -40,6 +41,7 @@ export default function DashBoardBigBo ({box}){
                     <p>{box.impact}</p>
                     <p className = {classes.descriptionTitles}>Funding Amount</p>
                     <p>{box.amount}</p>
+                    
                  </div>
         </div>
      

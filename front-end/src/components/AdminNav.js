@@ -5,12 +5,9 @@ import "../App.css";
 
 // import CalendarDate from "./Calendar.js";
 
-import DashBoardProjects from "./DashBoardProjects.js"
-// import ProjectFunding from './projectFunding.js';
-// import Resources from './Resources'
-import Project from './project.js';
-import UserSignUp from './UserSignUp'
-
+import AdminDashboardProjects from "./Admin/AdminDashboardProjects";
+// import Project from './project.js';
+import AdminFunding from "./Admin/AdminFunding.js";
 
 
 
@@ -20,10 +17,11 @@ import DashboardImage from "../assets/icons/dashboardTabEdit.png";
 import ProjectFundingImage from "../assets/icons/fundingTabEdit.png";
 import ResourcesImage from "../assets/icons/ResourcesTabEdit.png";
 import MentoringImage from "../assets/icons/mentoringtabEdit.png";
-import SettingsImage from "../assets/icons/settingsTabEdit.png";
+// import SettingsImage from "../assets/icons/settingsTabEdit.png";
 import LogoutImage from "../assets/icons/LogoutTabEdit.png";
 import Mentoring from "./Mentoring";
-import ResourcesHub from "./ResourcesHub";
+import AdminResourcesHub from "./Admin/AdminResourcesHub.js";
+
 
 
 const MainContainer = Styled.div `
@@ -94,16 +92,13 @@ const Name = Styled.h3 `
 //     background-color: #2b3648;
 // `
 
-function LeftNav({users}) {
+function AdminNav() {
    const [dashBoardProjects, setDashBoardProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"}]);
    const [projects, setProjects] = useState([{id: "0", title: "test", description: "test", why: "test", impact: "test", amount: "$1", summary: "test", handles: "test"},]);
-   const [userName,setUserName] = useState({name:""})
+   console.log(dashBoardProjects);
 
-   
-//    console.log(dashBoardProjects);
-    console.log(users)
 
-    
+
 
     return (
         <MainContainer>
@@ -113,25 +108,26 @@ function LeftNav({users}) {
             <NamePic>
                 <Image alt = "stock-pic" src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
                 <Name></Name>
+                <Name>Admin</Name>
             </NamePic>
 
             {/* Middle div with icons and links */}
             <IconLinkDiv>
-                <NavLink to ="/dashboard" style = {{textDecoration: "none"}} activeClassName ="activeDashboard" exact>
+                <NavLink to ="/admin/dashboard" style = {{textDecoration: "none"}} activeClassName ="activeDashboard" exact>
                     <img src = {DashboardImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
 
-                <NavLink to ="/dashboard/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding">
+                <NavLink to ="/admin/funding" style = {{textDecoration: "none"}} activeClassName ="activeProjectFunding">
                     <img src = {ProjectFundingImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
               
 
-                <NavLink to ="/dashboard/mentoring" style = {{textDecoration: "none"}} activeClassName ="activeMentoring" exact>
+                <NavLink to ="/admin/mentoring" style = {{textDecoration: "none"}} activeClassName ="activeMentoring" exact>
                     <img src = {MentoringImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
 
-                <NavLink  to ="/dashboard/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources">
+                <NavLink  to ="/admin/resources" style = {{textDecoration: "none"}} activeClassName ="activeResources">
                     <img src = {ResourcesImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
                 
@@ -153,23 +149,25 @@ function LeftNav({users}) {
 
         </Container>
 
-        <Route exact path = "/dashboard"  render = {props => {
+        {/* <Route exact path = "/dashboard"  render = {props => {
             return <DashBoardProjects {...props} dashBoardProjects = {dashBoardProjects} />
+        }}/> */}
+
+        <Route exact path = "/admin/dashboard"  render = {props => {
+            return <AdminDashboardProjects {...props} dashBoardProjects = {dashBoardProjects} />
         }}/>
 
 
-{/* //         <Route exact path = "/dashboard" component= {CalendarDate} /> */}
-
-        <Route path = "/dashboard/funding"  render = {props => {
-            return <Project {...props} dashBoardProjects ={dashBoardProjects} setDashBoardProjects = {setDashBoardProjects} projects= {projects} setProjects = {setProjects}/> 
+        <Route path = "/admin/funding"  render = {props => {
+            return <AdminFunding {...props} dashBoardProjects ={dashBoardProjects} setDashBoardProjects = {setDashBoardProjects} projects= {projects} setProjects = {setProjects}/> 
             }} />
-        <Route  path = "/dashboard/resources" component = {ResourcesHub}/>
-        <Route exact path = "/dashboard/mentoring" component = {Mentoring} />
-            
+        <Route  path = "/Admin/resources" component = {AdminResourcesHub}/>
+        <Route exact path = "/admin/mentoring" component = {Mentoring} />
+
 
         </MainContainer>
     )
 
 }
 
-export default LeftNav;
+export default AdminNav;
