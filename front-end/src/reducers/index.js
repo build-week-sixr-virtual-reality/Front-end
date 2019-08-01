@@ -20,6 +20,9 @@ import {
   ADD_PROJECT_START,
   ADD_PROJECT_SUCCESS,
   ADD_PROJECT_FAILURE,
+  FETCH_MENTORS_START,
+  FETCH_MENTORS_SUCCESS,
+  FETCH_MENTORS_FAILURE,
   // EDIT_PROJECT_START,
   // EDIT_PROJECT_SUCCESS,
   // EDIT_PROJECT_FAILURE,
@@ -42,7 +45,8 @@ const initialState = {
   errorStatusCode: null,
   isRegistering: false,
   fetchingProjects: false,
-  editingProject: false,
+  editingSelf: false,
+  editingUserRoles: false,
   deletingUser: false,
   token: localStorage.getItem("token")
 };
@@ -110,25 +114,25 @@ const rootReducer = (state = initialState, action) => {
       };
     // --EDITING
 
-    // case EDIT_PROJECT_START:
-    //   return {
-    //     ...state,
-    //     editingProject: true
-    //   };
-    // case EDIT_PROJECT_SUCCESS:
-    //   return {
-    //     ...state,
-    //     editingProject: false,
-    //     error: "",
-    //     errorStatusCode: null
-    //   };
-    // case EDIT_PROJECT_FAILURE:
-    //   return {
-    //     ...state,
-    //     editingProject: false,
-    //     error: action.payload.data.error,
-    //     errorStatusCode: action.payload.status
-    //   };
+    case EDIT_ROLE_START:
+      return {
+        ...state,
+        editingUserRole: true
+      };
+    case EDIT_ROLE_SUCCESS:
+      return {
+        ...state,
+        editingUserRole: false,
+        error: "",
+        errorStatusCode: null
+      };
+    case EDIT_ROLE_FAILURE:
+      return {
+        ...state,
+        editingUserRole: false,
+        error: action.payload.data.error,
+        errorStatusCode: action.payload.status
+      };
 
     // USER CONTROL - ADMIN
     // --FETCH USERS
@@ -144,7 +148,7 @@ const rootReducer = (state = initialState, action) => {
         error: "",
         errorStatusCode: null,
         fetchingUsers: false,
-        users: action.payload
+        users: [...users, action.payload]
       };
     case FETCH_USERS_FAILURE:
       return {

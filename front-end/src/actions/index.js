@@ -96,6 +96,12 @@ export const registerUser = creds => dispatch => {
     });
 };
 
+export const getMentors = () => dispatch => {
+  dispatch({ type: FETCH_MENTORS_START });
+  return axios
+  .get("https://ashenphoenix-sixr.herokuapp.com/")
+}
+
 export const enableMentor = type => dispatch => {
   dispatch({ type: ENABLE_MENTOR_START });
   return axios

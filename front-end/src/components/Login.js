@@ -4,7 +4,8 @@ import  { makeStyles } from '@material-ui/styles'
 import Styled from "styled-components";
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { login } from '../actions/index'
 
 
 const LogIn = makeStyles({
@@ -85,8 +86,8 @@ const A = Styled.a `
    text-decoration: underline;
    color: #CBCFD4;
  `
-export default function UserLogIn() {
-
+export default function UserLogIn(props) {
+    console.log(props);
 
     // input state
     const [inputValue,setInputValue] = useState({
@@ -102,7 +103,9 @@ export default function UserLogIn() {
     }
 
     
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login()
     
            // make API call
             setUsers([...users,inputValue]);
