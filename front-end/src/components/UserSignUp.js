@@ -70,7 +70,7 @@ export default function UserSignUp(){
     const [inputValue,setInputValue] = useState({
         firstName:"Cristiano",
         lastName:"Ronaldo",
-        email: "RonaldoFC@gmail.com",
+        username: "RonaldoFC@gmail.com",
         password: "hello",
         rePassword: "hello"
     })
@@ -137,8 +137,8 @@ export default function UserSignUp(){
                             <input className ={classes.inputText}
                                 type ="text" 
                                 placeholder ="Enter Email" 
-                                name ="email"
-                                value = {inputValue.email}
+                                name ="username"
+                                value = {inputValue.username}
                                 id ={id}
                                 onChange ={handleChange}
 
