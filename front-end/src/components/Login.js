@@ -4,6 +4,7 @@ import  { makeStyles } from '@material-ui/styles'
 import Styled from "styled-components";
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
+import {Link} from 'react-router-dom'
 
 
 const LogIn = makeStyles({
@@ -156,19 +157,13 @@ export default function UserLogIn() {
 
 
 
-                  {/* </formdiv>
-                  <button type="submit">CREATE ACCOUNT</button>    
-             </form>
-            </div>
-  
-        </div>
-    </div> */}
 
                   </label>
                      
-                     <A href="">Forgot Password?</A>
-                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Create an account >
+                     <Link style ={{marginTop: '20px',paddingLeft: '50px'}} to ="/reset">Reset Password</Link>
+                     
+                    <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
+                        <Link to = "/dashboard"> Sign in </Link>
                     </button>   
               </form>
   
