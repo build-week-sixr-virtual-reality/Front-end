@@ -26,7 +26,9 @@ import {
   // PAYMENT_INITIATED,
   // PAYMENT_COMPLETED,
   // PAYMENT_PROBLEM,
-  FETCH_USERS_START
+  FETCH_USERS_START,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE
 } from "../actions";
 
 const initialState = {

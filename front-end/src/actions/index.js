@@ -37,9 +37,15 @@ export const ADD_PROJECT_START = "ADD_PROJECT_START";
 export const ADD_PROJECT_SUCCESS = "ADD_PROJECT_SUCCESS";
 export const ADD_PROJECT_FAILURE = "ADD_PROJECT_FAILURE";
 
-export const EDIT_PROJECT_START = "EDIT_PROJECT_START";
-export const EDIT_PROJECT_SUCCESS = "EDIT_PROJECT_SUCCESS";
-export const EDIT_PROJECT_FAILURE = "EDIT_PROJECT_FAILURE";
+export const DELETE_PROJECT_START = "DELETE_PROJECT_START";
+export const DELETE_PROJECT_SUCCESS = "DELETE_PROJECT_SUCCESS";
+export const DELETE_PROJECT_FAILURE = "DELETE_PROJECT_FAILURE";
+
+
+
+// export const EDIT_PROJECT_START = "EDIT_PROJECT_START";
+// export const EDIT_PROJECT_SUCCESS = "EDIT_PROJECT_SUCCESS";
+// export const EDIT_PROJECT_FAILURE = "EDIT_PROJECT_FAILURE";
 
 // STRIPE STUFF?
 
@@ -109,7 +115,7 @@ export const registerAdmin = creds => dispatch => {
 //   .put("https://ashenphoenix-sixr.herokuapp.com/user")
 // }
 
-export const deleteUser = () => id => {
+export const deleteUser = id => dispatch => {
   dispatch({ type: DELETE_USER_START });
   return axiosAuth()
     .delete(`https://ashenphoenix-sixr.herokuapp.com/users/${id}`)
@@ -118,13 +124,13 @@ export const deleteUser = () => id => {
       axiosAuth()
         .get("https://ashenphoenix-sixr.herokuapp.com/users/all")
         .then(res => {
-          dispatch({ type: FETCH_USER_SUCCESS, payload: res.data });
+          dispatch({ type: FETCH_USERS_SUCCESS, payload: res.data });
         })
         .catch(err => {
           if (err.response && err.response.status === 403) {
             dispatch({ type: USER_UNAUTHORIZED, payload: err.response });
           } else {
-            dispatch({ type: FETCH_USER_FAILURE, payload: err });
+            dispatch({ type: FETCH_USERS_FAILURE, payload: err });
           }
         });
     })
@@ -214,7 +220,7 @@ export const deleteProject = id => dispatch => {
       if (err.status === 403) {
         dispatch({ type: USER_UNAUTHORIZED, payload: err });
       } else {
-        dispatch({ type: DELETE_FAILURE, payload: err });
+        dispatch({ type: DELETE_PROJECT_FAILURE, payload: err });
       }
     });
 
