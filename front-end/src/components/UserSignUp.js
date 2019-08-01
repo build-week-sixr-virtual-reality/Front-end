@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'; 
 import { makeStyles } from '@material-ui/styles';
-import login from '../assets/login.jpg'
+import login from '../assets/login.jpg';
+import NavBarSignIn from "./NavBarSignIn.js";
 
 // styling
 const SignUp = makeStyles({
@@ -65,6 +66,8 @@ export default function UserSignUp(){
 
     // input state
     const [inputValue,setInputValue] = useState({
+        firstName:"",
+        lastname:"",
         email: "",
         password: "",
         rePassword: ""
@@ -86,14 +89,15 @@ export default function UserSignUp(){
             setID(prevId => prevId + 1)
            
         }
-        setInputValue({email: '',password: '',rePassword : ''})
+        setInputValue({firstName: "",lastName:"",email: '',password: '',rePassword : ''})
         console.log(users)
     }
 
     const classes = SignUp()
 
     return(
-
+        <div>
+            <NavBarSignIn />
             <div className = {classes.container}>
                 <div>
                     <img src ={login} alt ="VR" height ="801px" width ="700px" />
@@ -101,7 +105,30 @@ export default function UserSignUp(){
                 
                 <form className ={classes.formStyle}>
                     <h1 className= {classes.headerText}>Register an <br/> Account</h1>
-        
+                        <label className = {classes.labels}>
+                            First Name
+                            <input className ={classes.inputText}
+                                type ="text" 
+                                placeholder ="Enter first name" 
+                                name ="firstName"
+                                value = {inputValue.firstName}
+                                id ={id}
+                                onChange ={handleChange}
+
+                            />
+                        </label>
+                        <label className = {classes.labels}>
+                            Last Name:
+                            <input className ={classes.inputText}
+                                type ="text" 
+                                placeholder ="Enter last name" 
+                                name ="lastName"
+                                value = {inputValue.lastname}
+                                id ={id}
+                                onChange ={handleChange}
+
+                            />
+                        </label>
                         <label className = {classes.labels}>
                             Your Email Address
                             <input className ={classes.inputText}
@@ -148,7 +175,7 @@ export default function UserSignUp(){
                     <button type ="submit" onClick ={handleSubmit} className ={classes.button} >
                         Create an account
                     </button>
-                    <p>Already have an account?<span>Sign-in here</span></p>
+                    <p>Already have an account?<span><a href ="http://google.com">Sign-in here</a></span></p>
                     
                 </form>
 
@@ -159,7 +186,7 @@ export default function UserSignUp(){
 
         
                
-    
+        </div>
     )
 }
 
