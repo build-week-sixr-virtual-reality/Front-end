@@ -1,6 +1,7 @@
 import React from "react";
 import Styled from "styled-components";
-
+import {useDispatch} from "react-redux";
+import { enableMentor, getMentors } from '../actions/index';
 
 const TitleContainer = Styled.div `
     margin: 30px;
@@ -66,7 +67,24 @@ const MentorJob = Styled.p `
     margin-top: 10px;
 `
 
+const MentorButton = Styled.button `
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px 20px 10px;
+    padding: 10px 10px;
+    width: 140px;
+    border-radius: 25px;
+    color: #405168;
+    background: linear-gradient(to right, #35c6f2, #a3d89b);
+    border: none;
+    font-weight: bold;
+    font-size: .6rem;
+
+`
+
 function Mentoring () {
+
+    const dispatch = useDispatch();
     return (
         <div>
       
@@ -78,6 +96,7 @@ function Mentoring () {
             </TitleContainer>
 
             <MentorDiv>
+                <MentorButton>Add As Mentor</MentorButton>
                 <div>
                     <MentorSection>
                         <Image alt = "stock-pic" src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />

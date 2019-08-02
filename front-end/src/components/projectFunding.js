@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
-
+import {useDispatch} from "react-redux";
 
 import DeleteIcon from "../assets/icons/delete.png";
 
@@ -71,6 +71,9 @@ const Image = Styled.img `
 
 
 function ProjectFunding ({projects}) {
+
+    const dispatch = useDispatch();
+    
     console.log(projects)
     return (
         <div>

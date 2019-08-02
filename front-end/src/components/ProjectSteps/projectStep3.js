@@ -1,6 +1,10 @@
 import React from "react";
 import Styled from "styled-components";
 import { Link } from "react-router-dom";
+import { addProject } from '../../actions/index.js';
+import {useDispatch} from "react-redux";
+
+
 
 const TitleContainer = Styled.div `
     margin: 30px 30px 0 30px;
@@ -99,14 +103,18 @@ const DashSpan = Styled.span `
 `
 
 function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
+
+    const dispatch = useDispatch();
     console.log(stepOne)
 
     const handleChange = event => {
         setStepOne({...stepOne, [event.target.name]: event.target.value})
+        dispatch(addProject(stepOne))
     }
 
     const handleSubmit = event => {
         event.preventDefault();
+        addProject(stepOne);
         submitProject(stepOne);
         history.push("/dashboard/funding/submitted")
     }

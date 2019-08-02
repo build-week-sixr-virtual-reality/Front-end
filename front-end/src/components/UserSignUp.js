@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/styles';
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
 import LeftNav from './leftnav';
-import { registerUser } from '../actions/index';
+import { registerUser, registerAdmin } from '../actions/index';
+import {useDispatch} from "react-redux";
 
 // styling
 const SignUp = makeStyles({
@@ -69,8 +70,8 @@ export default function UserSignUp(){
 
     // input state
     const [inputValue,setInputValue] = useState({
-        firstName:"Cristiano",
-        lastName:"Ronaldo",
+        fname:"Cristiano",
+        lname:"Ronaldo",
         username: "RonaldoFC@gmail.com",
         password: "hello",
         rePassword: "hello"
@@ -82,19 +83,20 @@ export default function UserSignUp(){
         setInputValue({...inputValue,[e.target.name] : e.target.value,id})
        
     }
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         if (inputValue.password !== inputValue.rePassword) {
             alert("Passwords don't match");
         } 
-        registerUser(inputValue);
+        dispatch(registerUser(inputValue.username, inputValue.password, inputValue.fname, inputValue.lname));
             // make API call
             setUsers([...users,inputValue])
             setID(prevId => prevId + 1)
-            console.log(users)
+            console.log(inputValue.username)
             
-            setInputValue({firstName: "",lastName:"",email: '',password: '',rePassword : ''})
+            setInputValue({fname: "",lname:"",username: '',password: '',rePassword : ''})
        
     }
 
@@ -115,8 +117,8 @@ export default function UserSignUp(){
                             <input className ={classes.inputText}
                                 type ="text" 
                                 placeholder ="Enter first name" 
-                                name ="firstName"
-                                value = {inputValue.firstName}
+                                name ="fname"
+                                value = {inputValue.fname}
                                 id ={id}
                                 onChange ={handleChange}
 
@@ -127,8 +129,8 @@ export default function UserSignUp(){
                             <input className ={classes.inputText}
                                 type ="text" 
                                 placeholder ="Enter last name" 
-                                name ="lastName"
-                                value = {inputValue.lastName}
+                                name ="lname"
+                                value = {inputValue.lname}
                                 id ={id}
                                 onChange ={handleChange}
 
