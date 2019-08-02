@@ -156,7 +156,7 @@ function LeftNav({users}) {
     summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     handles: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
  },]);
- 
+
    const [userName,setUserName] = useState({name:""})
 
    
