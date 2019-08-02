@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import Styled from "styled-components";
 import axios from "axios";
@@ -39,6 +39,10 @@ const boxDiv = makeStyles({
 })
 
 export default function AdminDashboardProjects({dashBoardProjects}){
+    const [userInfo, setUserInfo] = useState("");
+
+
+
     const classes = boxDiv()
     return(
         <div>
