@@ -70,11 +70,14 @@ export default function UserSignUp(){
 
     // input state
     const [inputValue,setInputValue] = useState({
-        fname:"Cristiano",
-        lname:"Ronaldo",
+
+
+        fName:"Cristiano",
+        lName:"Ronaldo",
         username: "RonaldoFC@gmail.com",
         password: "hello",
-        rePassword: "hello"
+        rePassword: "hello",
+        phone: '123-456-7801'
     })
     const [users,setUsers] = useState([])
     const [id,setID] = useState(0)
@@ -96,7 +99,10 @@ export default function UserSignUp(){
             setID(prevId => prevId + 1)
             console.log(inputValue.username)
             
-            setInputValue({fname: "",lname:"",username: '',password: '',rePassword : ''})
+
+
+            setInputValue({fname: "",lname:"",username: '',password: '',rePassword : '',phone:''})
+
        
     }
 
@@ -139,7 +145,7 @@ export default function UserSignUp(){
                         <label className = {classes.labels}>
                             Your Email Address
                             <input className ={classes.inputText}
-                                type ="text" 
+                                type ="email" 
                                 placeholder ="Enter Email" 
                                 name ="username"
                                 value = {inputValue.username}
@@ -172,6 +178,19 @@ export default function UserSignUp(){
                                 placeholder ="Re-Enter Password"
                                 name ="rePassword"
                                 value ={inputValue.rePassword} 
+                                id ={id}
+                                onChange ={handleChange}
+
+                        />
+                    </label>
+
+                    <label className = {classes.labels}>
+                           Phone Number
+                            <input className ={classes.inputText}
+                                type ="tel" 
+                                placeholder ="Re-Enter Password"
+                                name ="phone"
+                                value ={inputValue.phone} 
                                 id ={id}
                                 onChange ={handleChange}
 

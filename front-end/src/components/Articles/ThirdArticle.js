@@ -1,5 +1,7 @@
 import React from 'react'
 import Styled from "styled-components";
+import article3 from '../../assets/ArticleImages/article3.jpg'
+import article33 from '../../assets/ArticleImages/article33.jpg'
 
 const TitleContainer = Styled.div `
     margin: 30px 30px 0px 30px;
@@ -32,7 +34,7 @@ const Paragraph = Styled.p `
 
 const ArticleContainer = Styled.div `
     background-color: #ECF9FE;
-    height: 670px
+    height: 100%
     margin: 0px 0px 0px 30px
     width: 809px
 
@@ -61,6 +63,57 @@ const TextContainers = Styled.p `
     margin-right:50px
 
 `
+const BoxHeader = Styled.h2 `
+
+width: 305px;
+height: 30px;
+left: 1071px;
+top: 278px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 30px;
+
+
+
+color: #FECA3B;
+
+`
+
+const BoxPara = Styled.p `
+width: 280px;
+height: 88px;
+left: 900px;
+top: 318px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 22px;
+
+color: #FECA3B;
+`
+
+const AnchorBox = Styled.a`
+width: 305px;
+height: 22px;
+left: 800px;
+top: 416px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 22px;
+
+
+
+color: #FECA3B;
+
+`
 
 export default function ThirdArticle(){
     return(
@@ -75,7 +128,7 @@ export default function ThirdArticle(){
                 <ArticleContainer>
                     <HeaderContainers1>Lorem ipsum dolor sit.</HeaderContainers1>
                     <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
-                    {/* <ImgContainer1 src ={article1} alt = "VR Things" /> */}
+                    <ImgContainer1 src ={article3} alt = "VR Things" />
                     <HeaderContainers1>Lorem ipsum dolor sit.</HeaderContainers1>
                     <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
                     <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
@@ -83,22 +136,24 @@ export default function ThirdArticle(){
                     <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
                     <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
                     <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
-                    {/* <ImgContainer1 src ={article12} alt ="VR Things" /> */}
+                    <ImgContainer1 src ={article33} alt ="VR Things" />
                     <HeaderContainers1>Lorem ipsum dolor sit. </HeaderContainers1>
                     <TextContainers>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</TextContainers>
 
                 </ArticleContainer>
                 
-                
-                
-            </div>
-            <div>
-                
                 <BigBoxContainer>
-
+                    <BoxHeader>Related Resources:</BoxHeader>
+                    <BoxPara>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</BoxPara>
+                    <AnchorBox href = 'https://google.com'>www.google.com </AnchorBox>
                 </BigBoxContainer>
                 
+                
             </div>
+            
+                
+                
+            
         </div>
     )
     
