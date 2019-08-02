@@ -67,6 +67,57 @@ const TextContainers = Styled.p `
     margin-right:50px
 
 `
+const BoxHeader = Styled.h2 `
+
+width: 305px;
+height: 30px;
+left: 1071px;
+top: 278px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 30px;
+
+
+
+color: #FECA3B;
+
+`
+
+const BoxPara = Styled.p `
+width: 280px;
+height: 88px;
+left: 900px;
+top: 318px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 22px;
+
+color: #FECA3B;
+`
+
+const AnchorBox = Styled.a`
+width: 305px;
+height: 22px;
+left: 800px;
+top: 416px;
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 22px;
+
+
+
+color: #FECA3B;
+
+`
 
 export default function FirstArticle(props){
     return(
@@ -95,7 +146,9 @@ export default function FirstArticle(props){
                 </ArticleContainer>
                 
                 <BigBoxContainer>
-
+                    <BoxHeader>Related Resources:</BoxHeader>
+                    <BoxPara>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</BoxPara>
+                    <AnchorBox href = 'https://google.com'>www.google.com </AnchorBox>
                 </BigBoxContainer>
                 
             </div>
