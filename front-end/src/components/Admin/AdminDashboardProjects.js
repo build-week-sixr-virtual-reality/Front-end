@@ -97,6 +97,9 @@ export default function AdminDashboardProjects(){
             .then(response => {
                 setUserInfo(response.data.dataOne)
             })
+            .catch(error => {
+                console.log("Error getting data", error)
+            })
     }, [])
 
 
