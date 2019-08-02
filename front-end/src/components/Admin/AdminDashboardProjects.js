@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import Styled from "styled-components";
 import axios from "axios";
@@ -38,10 +38,18 @@ const boxDiv = makeStyles({
     }
 })
 
-export default function AdminDashboardProjects({dashBoardProjects}){
+export default function AdminDashboardProjects(){
     const [userInfo, setUserInfo] = useState("");
 
+    useEffect(() => {
+        axios
+            .get("../usersData.json")
+            .then(response => {
+                setUserInfo(response.data.dataOne)
+            })
+    }, [])
 
+    console.log(userInfo)
 
     const classes = boxDiv()
     return(
@@ -52,8 +60,14 @@ export default function AdminDashboardProjects({dashBoardProjects}){
                 <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Paragraph>
 
             </TitleContainer>
-            <div className = {classes.rootBigBox}>
-                
+            <div className = {classes.rootBigBox} >
+                {Object.values(userInfo).map(user => {
+                    return (
+                        <div>
+                            {/* <h2>{user.</h2> */}
+                        </div>
+                    )
+                })}
             </div>
          </div>  
         </div>
