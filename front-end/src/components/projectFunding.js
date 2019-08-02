@@ -63,9 +63,11 @@ const AddProjectButton = Styled.button `
     border: none;
     font-weight: bold;
     font-size: .6rem;
+    cursor: pointer;
 `
 const Image = Styled.img `
     margin-top: 5px;
+    cursor: pointer;
 
 `
 

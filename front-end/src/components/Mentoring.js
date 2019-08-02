@@ -79,6 +79,7 @@ const MentorButton = Styled.button `
     border: none;
     font-weight: bold;
     font-size: .6rem;
+    cursor: pointer;
 
 `
 

@@ -40,7 +40,8 @@ const miniBoxDiv = makeStyles({
         border: "none",
         fontWeight: "bold",
         fontSize: ".6rem",
-        marginBottom: "10px"
+        marginBottom: "10px",
+        cursor: "pointer"
 
     },
 
