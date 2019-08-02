@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import  { makeStyles } from '@material-ui/styles'
+import  { makeStyles } from '@material-ui/styles';
 import Styled from "styled-components";
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
@@ -15,10 +15,15 @@ const LogIn = makeStyles({
         flexDirection:'row',
         width: '100%',
         height: '100%',
-        minHeight: '100vh'
+        minHeight: '100vh'   
+
+
+    },
+    container2:{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
         
-
-
     },
     headerText:{
         color: '#FEBF10',
@@ -46,11 +51,12 @@ const LogIn = makeStyles({
         
     },
     button:{
-        position: 'absolute',
+    
         width: '270px',
-        height: '40px',
-        left: '930px',
-        top: '508px',
+        height: '40px',        
+        marginTop: '5px',
+        marginBottom: '5px',        
+        top: '508px',        
         borderRadius: '20px',
         background: 'linear-gradient(to right, #ee785e, #a255ef)',
         fontFamily: 'Open Sans',
@@ -59,14 +65,24 @@ const LogIn = makeStyles({
         fontSize: '10px',
         lineHeight: '14px',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         textTransform: 'uppercase',
         color: '#FFFFFF'
         
+    },    
+    buttondiv:{
+        marginTop: '40px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        
     },
+   
     inputText:{
         padding: '10px 150px 10px 0px',
-        borderRadius: '5px'
+        borderRadius: '5px',        
+    
     }
 
 })
@@ -75,8 +91,8 @@ const A = Styled.a `
    position: absolute;
    width: 73px;
    height: 18px;
-   left: 1132px;
-   top: 461px;
+   left: 1170px;
+   top: 451px;
    font-family:Open Sans Condensed;
    font-style: normal;
    font-weight: 300;
@@ -112,13 +128,13 @@ export default function UserLogIn() {
         };
         
        
-       const classes = LogIn() {
+       const classes = LogIn()
 
     return(
 
         <div>
             <NavBarSignIn />
-        <div>
+        
 
         <div className={classes.container}>
 
@@ -126,7 +142,7 @@ export default function UserLogIn() {
             <div>
                 <img src={login} alt ="VR" height ="801px" width ="700px" />
             </div>
-
+            <div className={classes.container2}>
               <form className={classes.formStyle}>
                 <h1 className= {classes.headerText}>Access your dashboard</h1>
                 
@@ -154,15 +170,24 @@ export default function UserLogIn() {
                             />
                     </label>
 
-                    <A href="">Forgot Password?</A>
+                    <A href="">Forgot Password?</A> 
+                    <div className={classes.buttondiv}>
+                    <button type ="submit" onClick ={handleSubmit} className ={classes.button}>
+                                <Link to = "/dashboard"> Create an Account</Link>
+                    </button>                
+                                                           
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Create an account 
+                            <Link to = "/dashboard">Admin</Link>     
                     </button>
+                                    
                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Admin 
-                    </button>
-                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                        Users
-                    </button>
-)
+                            <Link to = "/dashboard">Users</Link>
+                    </button>                                     
+                    </div>            
+               </form>
+            </div>      
+        </div>
+    </div>
+ ) 
+
 }
