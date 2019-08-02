@@ -117,32 +117,32 @@ function AdminFunding () {
             <DivContainer>
                 <div style ={{width: '30%', margin: '20px'}}>
                     {projects.map((item,index) => (
-                        <Card style ={{backgroundColor:'#e7ae0f', borderRadius :'20px'}}   key ={index}
-                            header=<h2>{item.title}</h2>
-                            meta={item.amount}
-                            description={item.description}
-                            extra={item.impact}
+                        <Card style ={{backgroundColor:'#2D4059', borderRadius :'20px',padding:'20px'}} key ={index}
+                            header={<h2 style = {{color:'whitesmoke',textDecoration:'underline'}}>{item.title}</h2>}
+                            meta={<p style = {{color:'whitesmoke'}}>Amount: {item.amount}</p>}
+                            description={<p style = {{color:'whitesmoke'}}>Description: {item.description}</p>}
+                            extra={<p style = {{color:'whitesmoke'}}>Impact:{item.impact}</p>}
                         />
                     ))}
                 </div>
 
                 <div style ={{width: '30%',margin: '20px'}}>
                     {projects1.map((item,index) => (
-                        <Card style ={{backgroundColor:'#e7ae0f'}} key ={index}
-                            header={item.title}
-                            meta={item.amount}
-                            description={item.description}
-                            extra={item.impact}
+                        <Card style ={{backgroundColor:'#2D4059', borderRadius :'20px',padding:'20px'}} key ={index}
+                            header={<h2 style = {{color:'whitesmoke',textDecoration:'underline'}}>{item.title}</h2>}
+                            meta={<p style = {{color:'whitesmoke',textDecoration:'none'}}>Amount: {item.amount}</p>}
+                            description={<p style = {{color:'whitesmoke'}}>Description: {item.description}</p>}
+                            extra={<p style = {{color:'whitesmoke'}}>Impact:{item.impact}</p>}
                         />
                     ))}
                 </div>
                 <div style ={{width: '30%',margin: '20px'}}>
                     {projects2.map((item,index) => (
-                        <Card style ={{backgroundColor:'#e7ae0f'}} key ={index}
-                            header={item.title}
-                            meta={item.amount}
-                            description={item.description}
-                            extra={item.impact}
+                        <Card style ={{backgroundColor:'#2D4059', borderRadius :'20px',padding:'20px'}} key ={index}
+                            header={<h2 style = {{color:'whitesmoke',textDecoration:'underline'}}>{item.title}</h2>}
+                            meta={<p style = {{color:'whitesmoke',textDecoration:'none'}}>Amount: {item.amount}</p>}
+                            description={<p style = {{color:'whitesmoke',textDecoration:'none'}}>Description: {item.description}</p>}
+                            extra={<p style = {{color:'whitesmoke',textDecoration:'none'}}>Impact:{item.impact}</p>}
                         />
                     ))}
                 </div>
