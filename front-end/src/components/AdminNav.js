@@ -142,7 +142,7 @@ function AdminNav() {
 
             {/* Settings div */}
             <IconLinkDiv>
-                <NavLink to ="/logout" style = {{textDecoration: "none"}} activeClassName ="activeLogout" exact>
+                <NavLink to ="/login" style = {{textDecoration: "none"}} activeClassName ="activeLogout" exact>
                     <img src = {LogoutImage} alt = "dashboard yellow link" style = {{width: "256px", ZIndex: "-1", }} />
                 </NavLink>
             </IconLinkDiv>
