@@ -1,5 +1,5 @@
 {
-    "dataOne":{
+    "dataOne":[{
         "fName":"Hamidou",
         "lName":"Diallo",
         "username": "Hami@gmail.com",
@@ -10,7 +10,7 @@
 
     },
 
-    "dataTwo":{
+    {
         "fName":"Seth",
         "lName":"Nadu",
         "username": "Seth@gmail.com",
@@ -21,7 +21,7 @@
 
     },
 
-    "dataThree":{
+    {
         "fName":"Jeremy",
         "lName":"Brady",
         "username": "Brady@gmail.com",
@@ -33,7 +33,7 @@
     },
 
     
-    "dataFour":{
+    {
             "fName":"Emma",
             "lName":"Zarate",
             "username": "Emma@gmail.com",
@@ -43,6 +43,6 @@
             "image": "https://build-week-sixr-virtual-reality.github.io/Web-UI-Emma-Zarate/img/ezarate.jpg"
     
         }
-    
+    ]
        
-    }
+}
