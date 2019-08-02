@@ -3,6 +3,7 @@ import React from 'react'
 
 import {makeStyles} from '@material-ui/core/styles'
 import Styled from "styled-components";
+import { changeUserRole, deleteUser } from '../../actions/index';
 
 
 const TitleContainer = Styled.div `

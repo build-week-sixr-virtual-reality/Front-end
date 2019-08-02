@@ -1,5 +1,6 @@
 import axios from "axios";
 import axiosAuth from "../axiosAuth";
+import auth from "axios-oauth-client";
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -65,19 +66,46 @@ export const DELETE_PROJECT_FAILURE = "DELETE_PROJECT_FAILURE";
 
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
-  const body = `grant_type=password&username=${creds.username}&password=${
-    creds.password
-  }`;
-  return (
+  const body = {
+    grant_type: "password",
+    password: creds.password,
+    username: creds.username,
+    client_id: "lambda-client",
+    client_secret: "lambda-secret",
+
+
+  }
+ 
+   const getAuth =  auth.client(
+      axios.create(),
+      { 
+        url:"https://ashenphoenix-sixr.herokuapp.com/login", 
+        grant_type: "password",
+        password: creds.password,
+        username: creds.username,
+        client_id: "lambda-client",
+        client_secret: "lambda-secret",
+        
+        scope: ""
+      }
+    )
+    // const test = await getAuth();
+    // console.log(test);
+    return (
+     
     axios
       // check with backend on this if causing errors
-      .post("https://ashenphoenix-sixr.herokuapp.com/login", body, {
+      .post(`https://ashenphoenix-sixr.herokuapp.com/login?grant_type=password&client_id=${body.client_id}&client_secret=${body.client_secret}&password=${creds.password}&username=${creds.username}`, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: "Basic c2FmZXNwYWNlLWNsaWVudDpzYWZlc3BhY2Utc2VjcmV0"
+          Authorization: `Basic ${btoa('lambda-client-g:lambda-secret-g')}`,
+          accept: "application/json"
         }
+        
+
       })
       .then(res => {
+        console.log("login-test", res)
         localStorage.setItem("token", res.data.access_token);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data.access_token });
       })

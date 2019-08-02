@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
+import {useDispatch} from "react-redux";
+import { getProjects, deleteProject } from '../../actions/index';
 
 
 const TitleContainer = Styled.div `
@@ -68,6 +70,10 @@ const DivContainer = Styled.div `
 
 
 function AdminFunding ({projects}) {
+
+    const dispatch = useDispatch();
+
+
     console.log(projects)
     return (
         <div>

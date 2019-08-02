@@ -6,6 +6,8 @@ import loginImg from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
 import { Link } from 'react-router-dom'
 import { login } from '../actions/index'
+import {useDispatch} from "react-redux";
+
 
 
 const LogInStyles = makeStyles({
@@ -118,20 +120,37 @@ export default function UserLogIn(props) {
         setInputValue({...inputValue,[e.target.name] : e.target.value, id});
     }
 
+    const dispatch = useDispatch();
+
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        login(inputValue);
-        console.log(login)
-        console.log(inputValue)
+        dispatch(login(inputValue));
+
+    
+
+        // console.log(login)
+        // console.log(inputValue.username, inputValue.password)
            // make API call
             setUsers([...users,inputValue]);
             setID(prevId => prevId + 1);
             setInputValue({email: '', password: ''});
             props.history.push("/dashboard");
-           
-        };
+          
+        }
         
+        const handleSubmitAdmin = (e) => {
+            e.preventDefault();
+            login(inputValue);
+            // console.log(login)
+            // console.log(inputValue.username, inputValue.password)
+               // make API call
+                setUsers([...users,inputValue]);
+                setID(prevId => prevId + 1);
+                setInputValue({email: '', password: ''});
+                props.history.push("/admin/dashboard");
+               
+            };
        
        const classes = LogInStyles()
 
@@ -183,7 +202,7 @@ export default function UserLogIn(props) {
                      
                      <Link style ={{marginTop: '20px',paddingLeft: '50px'}} to ="/reset">Reset Password</Link>
 
-                    <button className = {classes.buttonAdmin} ><Link to = "/admin/dashboard"> Admin Sign In </Link></button>
+                    <button className = {classes.buttonAdmin} onClick ={handleSubmitAdmin}>Admin Sign In</button>
 
 
                     <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
