@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/styles';
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
 import LeftNav from './leftnav';
-import { registerUser } from '../actions/index';
+import { registerUser, registerAdmin } from '../actions/index';
+import {useDispatch} from "react-redux";
 
 // styling
 const SignUp = makeStyles({
@@ -69,12 +70,16 @@ export default function UserSignUp(){
 
     // input state
     const [inputValue,setInputValue] = useState({
+
         fName:"",
         lName:"",
         username: "",
         password: "",
         rePassword: "",
         phone: ''
+
+
+
     })
     const [users,setUsers] = useState([])
     const [id,setID] = useState(0)
@@ -83,19 +88,23 @@ export default function UserSignUp(){
         setInputValue({...inputValue,[e.target.name] : e.target.value,id})
        
     }
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         if (inputValue.password !== inputValue.rePassword) {
             alert("Passwords don't match");
         } 
-        registerUser(inputValue);
+        dispatch(registerUser(inputValue.username, inputValue.password, inputValue.fname, inputValue.lname));
             // make API call
             setUsers([...users,inputValue])
             setID(prevId => prevId + 1)
-            console.log(users)
+            console.log(inputValue.username)
             
+
+
             setInputValue({fname: "",lname:"",username: '',password: '',rePassword : '',phone:''})
+
        
     }
 

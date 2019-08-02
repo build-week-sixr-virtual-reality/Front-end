@@ -1,11 +1,13 @@
 
 import React, { useState } from 'react';
-import  { makeStyles } from '@material-ui/styles'
+import  { makeStyles } from '@material-ui/styles';
 import Styled from "styled-components";
 import loginImg from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
 import { Link } from 'react-router-dom'
 import { login } from '../actions/index'
+import {useDispatch} from "react-redux";
+
 
 
 const LogInStyles = makeStyles({
@@ -16,10 +18,15 @@ const LogInStyles = makeStyles({
         flexDirection:'row',
         width: '100%',
         height: '100%',
-        minHeight: '100vh'
+        minHeight: '100vh'   
+
+
+    },
+    container2:{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
         
-
-
     },
     headerText:{
         color: '#FEBF10',
@@ -47,11 +54,12 @@ const LogInStyles = makeStyles({
         
     },
     button:{
-        position: 'absolute',
+    
         width: '270px',
-        height: '40px',
-        left: '930px',
-        top: '508px',
+        height: '40px',        
+        marginTop: '5px',
+        marginBottom: '5px',        
+        top: '508px',        
         borderRadius: '20px',
         background: 'linear-gradient(to right, #ee785e, #a255ef)',
         fontFamily: 'Open Sans',
@@ -60,35 +68,24 @@ const LogInStyles = makeStyles({
         fontSize: '10px',
         lineHeight: '14px',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         textTransform: 'uppercase',
         color: '#FFFFFF'
         
-    },
-
-    buttonAdmin:{
-        borderRadius: '20px',
-        background: 'linear-gradient(to right, #ee785e, #a255ef)',
-        fontFamily: 'Open Sans',
-        fontStyle: 'normal',
-        fontWeight: 'bold',
-        fontSize: '10px',
-        lineHeight: '14px',
+    },    
+    buttondiv:{
+        marginTop: '40px',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
-        width: "270px",
-        height: "40px",
-        textTransform: 'uppercase',
-        color: '#FFFFFF',
-        margin: "350px auto 20px 128px",
-        justifyContent: "center",
-        fontSize: ".9rem",
-        position: "absolute",
         
     },
+
     inputText:{
         padding: '10px 150px 10px 0px',
-        borderRadius: '5px'
+        borderRadius: '5px',        
+    
     }
 
 })
@@ -97,8 +94,8 @@ const A = Styled.a `
    position: absolute;
    width: 73px;
    height: 18px;
-   left: 1132px;
-   top: 461px;
+   left: 1170px;
+   top: 451px;
    font-family:Open Sans Condensed;
    font-style: normal;
    font-weight: 300;
@@ -123,20 +120,37 @@ export default function UserLogIn(props) {
         setInputValue({...inputValue,[e.target.name] : e.target.value, id});
     }
 
+    const dispatch = useDispatch();
+
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        login(inputValue);
-        console.log(login)
-        console.log(inputValue)
+        dispatch(login(inputValue));
+
+    
+
+        // console.log(login)
+        // console.log(inputValue.username, inputValue.password)
            // make API call
             setUsers([...users,inputValue]);
             setID(prevId => prevId + 1);
             setInputValue({email: '', password: ''});
             props.history.push("/dashboard");
-           
-        };
+          
+        }
         
+        const handleSubmitAdmin = (e) => {
+            e.preventDefault();
+            login(inputValue);
+            // console.log(login)
+            // console.log(inputValue.username, inputValue.password)
+               // make API call
+                setUsers([...users,inputValue]);
+                setID(prevId => prevId + 1);
+                setInputValue({email: '', password: ''});
+                props.history.push("/admin/dashboard");
+               
+            };
        
        const classes = LogInStyles()
 
@@ -144,7 +158,7 @@ export default function UserLogIn(props) {
 
         <div>
             <NavBarSignIn />
-        <div>
+        
 
         <div className={classes.container}>
 
@@ -152,7 +166,7 @@ export default function UserLogIn(props) {
             <div>
                 <img src={loginImg} alt ="VR" height ="801px" width ="700px" />
             </div>
-
+            <div className={classes.container2}>
               <form className={classes.formStyle}>
                 <h1 className= {classes.headerText}>Access your dashboard</h1>
                 
@@ -177,6 +191,7 @@ export default function UserLogIn(props) {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
+
                             onChange ={handleChange} /> 
                       
 
@@ -187,7 +202,7 @@ export default function UserLogIn(props) {
                      
                      <Link style ={{marginTop: '20px',paddingLeft: '50px'}} to ="/reset">Reset Password</Link>
 
-                    <button className = {classes.buttonAdmin} ><Link to = "/admin/dashboard"> Admin Sign In </Link></button>
+                    <button className = {classes.buttonAdmin} onClick ={handleSubmitAdmin}>Admin Sign In</button>
 
 
                     <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
@@ -204,9 +219,4 @@ export default function UserLogIn(props) {
 
 
 
-// <<<<<<< HEAD
-//                             onChange ={handleChange} />                            
-//                   </label>              
-//                     <A href="">Forgot Password?</A>
-//                     <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-//                         Create an account ></button>
+
