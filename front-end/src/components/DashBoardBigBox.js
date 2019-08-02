@@ -11,13 +11,20 @@ const miniBoxDiv = makeStyles({
         margin: '30px',
         borderRadius: '10px',
         textAlign: "left",
-        padding: "20px 30px 20px 30px"
+        padding: "20px 30px 20px 30px",
+        overflow: "scroll",
     },
     descriptionTitles: {
         fontSize: "1rem",
         color: "#c5cad1",
         textDecoration: "underline",
 
+    },
+    projectInfo: {
+        backgroundColor: "#1c2839",
+        padding: "20px",
+        margin: "10px",
+        color: "#c5cad1",
     }
 })
 export default function DashBoardBigBo ({box}){
@@ -32,15 +39,15 @@ export default function DashBoardBigBo ({box}){
                 <div className ={classes.rootBigBox}>
 
                     <p className = {classes.descriptionTitles}>Title</p>
-                    <h2>{box.title}</h2>
+                    <h2 className = {classes.projectInfo}>{box.title}</h2>
                     <p className = {classes.descriptionTitles}>Description</p>
-                    <p>{box.description}</p>
+                    <p className = {classes.projectInfo}>{box.description}</p>
                     <p className = {classes.descriptionTitles}>Why?</p>
-                    <p>{box.why}</p>
+                    <p className = {classes.projectInfo}>{box.why}</p>
                     <p className = {classes.descriptionTitles}>Impact</p>
-                    <p>{box.impact}</p>
+                    <p className = {classes.projectInfo}>{box.impact}</p>
                     <p className = {classes.descriptionTitles}>Funding Amount</p>
-                    <p>{box.amount}</p>
+                    <p className = {classes.projectInfo}>{box.amount}</p>
                     
                  </div>
         </div>
