@@ -72,7 +72,7 @@ function NavBarSignIn() {
       <AppBar position="static">
         <Toolbar className ={classes.toolbar}>
           <Typography variant="h6" className={classes.title}>
-            <img className={classes.logoSIXR} src = {Logo} alt ="SIXR logo" />
+            <a href="https://sixr.netlify.com/index.html" ><img className={classes.logoSIXR} src = {Logo} alt ="SIXR logo" /></a>
           </Typography>
           <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">About Us</Button></NavLink>
           <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Resources</Button></NavLink>
