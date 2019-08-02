@@ -71,13 +71,15 @@ export default function UserSignUp(){
     // input state
     const [inputValue,setInputValue] = useState({
 
+        fName:"",
+        lName:"",
+        username: "",
+        password: "",
+        rePassword: "",
+        phone: ''
 
-        fName:"Cristiano",
-        lName:"Ronaldo",
-        username: "RonaldoFC@gmail.com",
-        password: "hello",
-        rePassword: "hello",
-        phone: '123-456-7801'
+
+
     })
     const [users,setUsers] = useState([])
     const [id,setID] = useState(0)

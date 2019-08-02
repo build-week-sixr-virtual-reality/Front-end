@@ -37,3 +37,51 @@ export const projectData = [
     }
 
 ]
+
+
+
+
+export const userData = [
+    {
+        fName:"Hamidou",
+        lName:"Diallo",
+        username: "Hami@gmail.com",
+        password: "hello",
+        rePassword: "hello",
+        phone: '123-456-7801'
+
+    },
+
+    {
+        fName:"Seth",
+        lName:"Nadu",
+        username: "Seth@gmail.com",
+        password: "great",
+        rePassword: "great",
+        phone: '123-136-7801'
+
+    },
+
+    {
+        fName:"Jeremy",
+        lName:"Brady",
+        username: "Brady@gmail.com",
+        password: "Goat",
+        rePassword: "Goat",
+        phone: '123-456-5901'
+
+    },
+
+    
+        {
+            fName:"Emma",
+            lName:"Zarate",
+            username: "Emma@gmail.com",
+            password: "winner",
+            rePassword: "winner",
+            phone: '789-456-1234'
+    
+        }
+    
+
+]
