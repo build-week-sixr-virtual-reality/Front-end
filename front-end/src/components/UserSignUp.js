@@ -3,7 +3,8 @@ import {Link,Route} from 'react-router-dom'
 import { makeStyles } from '@material-ui/styles';
 import login from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
-import LeftNav from './leftnav'
+import LeftNav from './leftnav';
+import { registerUser } from '../actions/index';
 
 // styling
 const SignUp = makeStyles({
@@ -68,11 +69,12 @@ export default function UserSignUp(){
 
     // input state
     const [inputValue,setInputValue] = useState({
-        firstName:"Cristiano",
-        lastName:"Ronaldo",
-        email: "RonaldoFC@gmail.com",
+        fName:"Cristiano",
+        lName:"Ronaldo",
+        username: "RonaldoFC@gmail.com",
         password: "hello",
-        rePassword: "hello"
+        rePassword: "hello",
+        phone: '123-456-7801'
     })
     const [users,setUsers] = useState([])
     const [id,setID] = useState(0)
@@ -87,12 +89,13 @@ export default function UserSignUp(){
         if (inputValue.password !== inputValue.rePassword) {
             alert("Passwords don't match");
         } 
+        registerUser(inputValue);
             // make API call
             setUsers([...users,inputValue])
             setID(prevId => prevId + 1)
             console.log(users)
             
-            setInputValue({firstName: "",lastName:"",email: '',password: '',rePassword : ''})
+            setInputValue({fname: "",lname:"",username: '',password: '',rePassword : '',phone:''})
        
     }
 
@@ -113,8 +116,8 @@ export default function UserSignUp(){
                             <input className ={classes.inputText}
                                 type ="text" 
                                 placeholder ="Enter first name" 
-                                name ="firstName"
-                                value = {inputValue.firstName}
+                                name ="fname"
+                                value = {inputValue.fname}
                                 id ={id}
                                 onChange ={handleChange}
 
@@ -125,8 +128,8 @@ export default function UserSignUp(){
                             <input className ={classes.inputText}
                                 type ="text" 
                                 placeholder ="Enter last name" 
-                                name ="lastName"
-                                value = {inputValue.lastName}
+                                name ="lname"
+                                value = {inputValue.lname}
                                 id ={id}
                                 onChange ={handleChange}
 
@@ -135,10 +138,10 @@ export default function UserSignUp(){
                         <label className = {classes.labels}>
                             Your Email Address
                             <input className ={classes.inputText}
-                                type ="text" 
+                                type ="email" 
                                 placeholder ="Enter Email" 
-                                name ="email"
-                                value = {inputValue.email}
+                                name ="username"
+                                value = {inputValue.username}
                                 id ={id}
                                 onChange ={handleChange}
 
@@ -168,6 +171,19 @@ export default function UserSignUp(){
                                 placeholder ="Re-Enter Password"
                                 name ="rePassword"
                                 value ={inputValue.rePassword} 
+                                id ={id}
+                                onChange ={handleChange}
+
+                        />
+                    </label>
+
+                    <label className = {classes.labels}>
+                           Phone Number
+                            <input className ={classes.inputText}
+                                type ="tel" 
+                                placeholder ="Re-Enter Password"
+                                name ="phone"
+                                value ={inputValue.phone} 
                                 id ={id}
                                 onChange ={handleChange}
 

@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import  { makeStyles } from '@material-ui/styles';
 import Styled from "styled-components";
-import login from '../assets/login.jpg';
+import loginImg from '../assets/login.jpg';
 import NavBarSignIn from "./NavBarSignIn.js";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { login } from '../actions/index'
 
 
-const LogIn = makeStyles({
+const LogInStyles = makeStyles({
     container: {
         fontFamily: 'open-sans',
         backgroundColor:'#405168',
@@ -78,7 +79,7 @@ const LogIn = makeStyles({
         alignItems: 'center',
         
     },
-   
+
     inputText:{
         padding: '10px 150px 10px 0px',
         borderRadius: '5px',        
@@ -101,12 +102,12 @@ const A = Styled.a `
    text-decoration: underline;
    color: #CBCFD4;
  `
-export default function UserLogIn() {
-
+export default function UserLogIn(props) {
+    // console.log(props);
 
     // input state
     const [inputValue,setInputValue] = useState({
-        email: "",
+        username: "",
         password: ""
        
     })
@@ -118,17 +119,21 @@ export default function UserLogIn() {
     }
 
     
-    const handleSubmit = (e) =>{
-    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login(inputValue);
+        console.log(login)
+        console.log(inputValue)
            // make API call
             setUsers([...users,inputValue]);
             setID(prevId => prevId + 1);
             setInputValue({email: '', password: ''});
-            console.log(users);
+            props.history.push("/dashboard");
+           
         };
         
        
-       const classes = LogIn()
+       const classes = LogInStyles()
 
     return(
 
@@ -140,7 +145,7 @@ export default function UserLogIn() {
 
 
             <div>
-                <img src={login} alt ="VR" height ="801px" width ="700px" />
+                <img src={loginImg} alt ="VR" height ="801px" width ="700px" />
             </div>
             <div className={classes.container2}>
               <form className={classes.formStyle}>
@@ -151,7 +156,7 @@ export default function UserLogIn() {
                         <input className={classes.inputText}
                             type ="text" 
                             placeholder ="hello@sixr.tv" 
-                            name ="email"
+                            name ="username"
                             value = {inputValue.email}
                             id ={id}
                             onChange ={handleChange}
@@ -167,27 +172,32 @@ export default function UserLogIn() {
                             name ="password"
                             value = {inputValue.password}
                             id ={id}
-                            />
-                    </label>
 
-                    <A href="">Forgot Password?</A> 
-                    <div className={classes.buttondiv}>
-                    <button type ="submit" onClick ={handleSubmit} className ={classes.button}>
-                                <Link to = "/dashboard"> Create an Account</Link>
-                    </button>                
-                                                           
-                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                            <Link to = "/dashboard">Admin</Link>     
-                    </button>
-                                    
-                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
-                            <Link to = "/dashboard">Users</Link>
-                    </button>                                     
-                    </div>            
-               </form>
-            </div>      
+                            onChange ={handleChange} /> 
+                      
+
+
+
+
+                  </label>
+                     
+                     <Link style ={{marginTop: '20px',paddingLeft: '50px'}} to ="/reset">Reset Password</Link>
+
+                    <button className = {classes.buttonAdmin} ><Link to = "/admin/dashboard"> Admin Sign In </Link></button>
+
+
+                    <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
+                        SignIn
+
+                    </button>   
+              </form>
+  
+        </div>
         </div>
     </div>
- ) 
+    )
+}   
 
-}
+
+
+

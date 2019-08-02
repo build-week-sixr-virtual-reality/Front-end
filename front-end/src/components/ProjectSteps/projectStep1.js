@@ -122,7 +122,7 @@ function ProjectStep1 ({setStepOne, stepOne}) {
         <div>
          <TitleContainer>
                 <Title>Project Funding</Title>
-                <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</Paragraph>
+                <Paragraph>Please answer a few questions about your project. Our panel will review your application and make a desicion on wheter or not to fund your idea. Please feel free to contact us if you have any questions! Reach us via email: support@sixr.tv</Paragraph>
 
          </TitleContainer>
          <FormDiv>
