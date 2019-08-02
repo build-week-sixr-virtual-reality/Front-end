@@ -35,7 +35,7 @@ const Container = Styled.div `
     justify-content: left;
     max-width: 256px;
     height: 100%;
-    min-height: 860px;
+    min-height: 950px;
     background-color: #1d2838;
     margin: 0;
    

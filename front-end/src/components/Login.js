@@ -54,24 +54,18 @@ const LogInStyles = makeStyles({
         
     },
     button:{
-    
-        width: '270px',
-        height: '40px',        
-        marginTop: '5px',
-        marginBottom: '5px',        
-        top: '508px',        
-        borderRadius: '20px',
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+        margin: "420px 80px 80px 120px",
+        padding: "10px 10px",
+        height: "40px",
+        width: "270px",
+        borderRadius: "10px",
+        color: '#FFFFFF',
         background: 'linear-gradient(to right, #ee785e, #a255ef)',
-        fontFamily: 'Open Sans',
-        fontStyle: 'normal',
-        fontWeight: 'bold',
-        fontSize: '10px',
-        lineHeight: '14px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textTransform: 'uppercase',
-        color: '#FFFFFF'
+        fontWeight:"bold",
+        fontSize: ".8rem",
         
     },    
     buttondiv:{
@@ -86,6 +80,21 @@ const LogInStyles = makeStyles({
         padding: '10px 150px 10px 0px',
         borderRadius: '5px',        
     
+    },
+
+    buttonAdmin: {
+        position: "absolute",
+        display: "flex",
+        height: "40px",
+        justifyContent: "center",
+        margin: "350px 80px 80px 120px",
+        padding: "10px 10px",
+        width: "270px",
+        borderRadius: "10px",
+        color: '#FFFFFF',
+        background: 'linear-gradient(to right, #ee785e, #a255ef)',
+        fontWeight:"bold",
+        fontSize: ".8rem",
     }
 
 })
@@ -205,7 +214,7 @@ export default function UserLogIn(props) {
                     <button className = {classes.buttonAdmin} onClick ={handleSubmitAdmin}>Admin Sign In</button>
 
 
-                    <button style ={{paddingLeft: '100px', textAlign: 'center',marginLeft:'80px',paddingRight:'0px',fontSize : "0.9rem"}} type ="submit" onClick ={handleSubmit} className={classes.button}>
+                    <button type ="submit" onClick ={handleSubmit} className={classes.button}>
                         SignIn
 
                     </button>   
