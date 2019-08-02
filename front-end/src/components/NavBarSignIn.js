@@ -49,7 +49,8 @@ const useStyles = makeStyles(theme => ({
     margin: "5px",
     fontFamily: "open-sans",
     backgroundColor: "#e7ae0f",
-    color: "#2d4059"
+    color: "white",
+    border: "1px solid #e7ae0f"
     
   },
 
@@ -74,9 +75,8 @@ function NavBarSignIn() {
           <Typography variant="h6" className={classes.title}>
             <img className={classes.logoSIXR} src = {Logo} alt ="SIXR logo" />
           </Typography>
-          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">About Us</Button></NavLink>
-          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Resources</Button></NavLink>
-          <NavLink to="#" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">FAQ</Button></NavLink>
+          <a href="https://marketingsixr.netlify.com/" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">Home</Button></a>
+          <a href="https://sixr.netlify.com/about.html" style ={{textDecoration: "none", color: "white"}} ><Button className={classes.buttonFont} color="inherit">About Us</Button></a>
           <NavLink to="/login" style ={{color: "white", textDecoration: "none"}} ><Button className={classes.loginButton}  color="inherit">Login</Button></NavLink>
           <NavLink to="/" style ={{color: "#2d4059", textDecoration: "none"}} ><Button className={classes.registerButton} color="inherit">Register</Button></NavLink>
         </Toolbar>
