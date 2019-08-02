@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import axios from 'axios'
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
 import {useDispatch} from "react-redux";
 import { getProjects, deleteProject } from '../../actions/index';
-
+import {Card} from 'semantic-ui-react'
 
 const TitleContainer = Styled.div `
     margin: 30px;
@@ -33,6 +34,9 @@ const DivContainer = Styled.div `
     max-width: 720px;
     margin: 20px 30px 30px 30px;
     padding: 20px;
+    display:flex;
+    flexDirection:row;
+    
 `
 
 // const InnerDiv = Styled.div `
@@ -68,10 +72,35 @@ const DivContainer = Styled.div `
 
 // `
 
+const cardStyles = {
+    display: 'flex',
+    flexDirection:'column',
+    width: '200px',
+    height: '400px',
+    border: '10px groove yellow'
+}
 
-function AdminFunding ({projects}) {
+function AdminFunding () {
 
     const dispatch = useDispatch();
+    const [projects,setProjects] = useState([])
+    const [projects1,setProjects1] = useState([])
+    const [projects2,setProjects2] = useState([])
+   
+
+    useEffect(() => {
+        axios
+            .get("../projectData.json")
+            .then(response => {
+                console.log(response.data)
+                setProjects(response.data.dataOne)
+                setProjects1(response.data.dataTwo)
+                setProjects2(response.data.dataThree)
+                
+               
+            
+            })
+    }, [])
 
 
     console.log(projects)
@@ -86,17 +115,37 @@ function AdminFunding ({projects}) {
 
             </TitleContainer>
             <DivContainer>
-                {/* <Link to ="/dashboard/funding/step1" style ={{textDecoration: "none"}}><AddProjectButton>SUBMIT NEW PROJECT</AddProjectButton></Link>
-                {projects.map(project => {
-                    return (
-                        <InnerDiv>
-                            <ProjectP>{project.title}</ProjectP>
-                            <Image src ={DeleteIcon} alt = "Delete project" style = {{width: "30px", height: "35px"}} />
-                          
-                        </InnerDiv>
-                    ) 
-                })} */}
-                
+                <div style ={{width: '30%', margin: '20px'}}>
+                    {projects.map((item,index) => (
+                        <Card style ={{backgroundColor:'#e7ae0f', borderRadius :'20px'}}   key ={index}
+                            header=<h2>{item.title}</h2>
+                            meta={item.amount}
+                            description={item.description}
+                            extra={item.impact}
+                        />
+                    ))}
+                </div>
+
+                <div style ={{width: '30%',margin: '20px'}}>
+                    {projects1.map((item,index) => (
+                        <Card style ={{backgroundColor:'#e7ae0f'}} key ={index}
+                            header={item.title}
+                            meta={item.amount}
+                            description={item.description}
+                            extra={item.impact}
+                        />
+                    ))}
+                </div>
+                <div style ={{width: '30%',margin: '20px'}}>
+                    {projects2.map((item,index) => (
+                        <Card style ={{backgroundColor:'#e7ae0f'}} key ={index}
+                            header={item.title}
+                            meta={item.amount}
+                            description={item.description}
+                            extra={item.impact}
+                        />
+                    ))}
+                </div>
             </DivContainer>
         </div>
         </div>
