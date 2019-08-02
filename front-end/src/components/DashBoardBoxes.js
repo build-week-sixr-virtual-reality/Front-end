@@ -17,7 +17,7 @@ const miniBoxDiv = makeStyles({
         borderRadius: '10px',
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-evenly"
+        justifyContent: "space-between"
 
        
     },
@@ -40,6 +40,7 @@ const miniBoxDiv = makeStyles({
         border: "none",
         fontWeight: "bold",
         fontSize: ".6rem",
+        marginBottom: "10px"
 
     },
 

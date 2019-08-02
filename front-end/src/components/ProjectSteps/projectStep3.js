@@ -104,17 +104,17 @@ const DashSpan = Styled.span `
 
 function ProjectStep3 ({stepOne, setStepOne, submitProject, history}) {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     console.log(stepOne)
 
     const handleChange = event => {
         setStepOne({...stepOne, [event.target.name]: event.target.value})
-        dispatch(addProject(stepOne))
+        // dispatch(addProject(stepOne))
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        addProject(stepOne);
+        // addProject(stepOne);
         submitProject(stepOne);
         history.push("/dashboard/funding/submitted")
     }
